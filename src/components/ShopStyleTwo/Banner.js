@@ -1,21 +1,25 @@
+"use client";
 import React from "react";
 import Link from "next/link";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
 
 const Banner = () => {
   return (
-      <>
-        <Swiper
-          slidesPerView={1} 
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Pagination]}
-          className="home-slides"
-        >
-          <SwiperSlide>
-          <div className="main-banner" style={{ backgroundImage: `url(/images/main-banner2.jpg)` }}>
+    <>
+      <Swiper
+        slidesPerView={1}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
+        className="home-slides"
+      >
+        <SwiperSlide>
+          <div
+            className="main-banner"
+            style={{ backgroundImage: `url(/images/main-banner2.jpg)` }}
+          >
             <div className="d-table">
               <div className="d-table-cell">
                 <div className="container">
@@ -36,10 +40,13 @@ const Banner = () => {
               </div>
             </div>
           </div>
-          </SwiperSlide>
+        </SwiperSlide>
 
-          <SwiperSlide>
-          <div className="main-banner" style={{ backgroundImage: `url(/images/main-banner1.jpg)` }}>
+        <SwiperSlide>
+          <div
+            className="main-banner"
+            style={{ backgroundImage: `url(/images/main-banner1.jpg)` }}
+          >
             <div className="d-table">
               <div className="d-table-cell">
                 <div className="container">
@@ -60,10 +67,13 @@ const Banner = () => {
               </div>
             </div>
           </div>
-          </SwiperSlide>
+        </SwiperSlide>
 
-          <SwiperSlide>
-          <div className="main-banner" style={{ backgroundImage: `url(/images/main-banner3.jpg)` }}>
+        <SwiperSlide>
+          <div
+            className="main-banner"
+            style={{ backgroundImage: `url(/images/main-banner3.jpg)` }}
+          >
             <div className="d-table">
               <div className="d-table-cell">
                 <div className="container">
@@ -84,10 +94,10 @@ const Banner = () => {
               </div>
             </div>
           </div>
-          </SwiperSlide>
-          </Swiper>
-      </>
-    )
-}
+        </SwiperSlide>
+      </Swiper>
+    </>
+  );
+};
 
 export default Banner;

@@ -1,7 +1,18 @@
 import React from "react";
+import Facility from "@/components/Common/Facility";
+import Breadcrumb from "@/components/Common/Breadcrumb";
+import CartContent from "@/components/Cart/CartContent";
 
-const CartPage = () => {
-  return <div>CartPage</div>;
+const Cart = () => {
+  return (
+    <>
+      <Breadcrumb title="Cart" />
+
+      <CartContent />
+
+      <Facility />
+    </>
+  );
 };
 
-export default CartPage;
+export default Cart;

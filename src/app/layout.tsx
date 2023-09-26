@@ -3,7 +3,7 @@ import Footer from "@/components/Layout/Footer";
 import GoTop from "@/components/Layout/GoTop";
 import "./globals.css";
 import type { Metadata } from "next";
-import StyledJsxRegistry from "@/components/layout";
+import StyledJsxRegistry from "@/components/Provider";
 
 export const metadata: Metadata = {
   title: "Novine - React Next eCommerce Templates",

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import {
@@ -279,7 +280,7 @@ const LeftSidebar = () => {
               </h3>
 
               <div className="product-price">
-              <span className="old-price">$291.00</span>
+                <span className="old-price">$291.00</span>
                 <span className="new-price">$191.00</span>
               </div>
             </div>

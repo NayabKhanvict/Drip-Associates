@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -26,10 +27,10 @@ const OfferArea = () => {
                 slidesPerView: 1,
               },
               576: {
-                slidesPerView: 2, 
+                slidesPerView: 2,
               },
               1200: {
-                slidesPerView: 4, 
+                slidesPerView: 4,
               },
             }}
             modules={[Pagination]}
@@ -37,76 +38,86 @@ const OfferArea = () => {
           >
             <SwiperSlide>
               <div className="single-offer-box">
-                <img src="/images/offer-img1.jpg" alt="image" className="w-100" />
+                <img
+                  src="/images/offer-img1.jpg"
+                  alt="image"
+                  className="w-100"
+                />
 
                 <div className="offer-content">
                   <h3>T-Shirts</h3>
                   <span>65 Products</span>
                 </div>
 
-                <Link href="#">
-                   
-                </Link>
+                <Link href="#"></Link>
               </div>
             </SwiperSlide>
 
             <SwiperSlide>
               <div className="single-offer-box">
-                <img src="/images/offer-img2.jpg" alt="image" className="w-100" />
+                <img
+                  src="/images/offer-img2.jpg"
+                  alt="image"
+                  className="w-100"
+                />
 
                 <div className="offer-content">
                   <h3>Accessories</h3>
                   <span>155 Products</span>
                 </div>
 
-                <Link href="#">
-                
-                </Link>
+                <Link href="#"></Link>
               </div>
             </SwiperSlide>
 
             <SwiperSlide>
               <div className="single-offer-box">
-                <img src="/images/offer-img3.jpg" alt="image" className="w-100" />
+                <img
+                  src="/images/offer-img3.jpg"
+                  alt="image"
+                  className="w-100"
+                />
 
                 <div className="offer-content">
                   <h3>Footwaer</h3>
                   <span>175 Products</span>
                 </div>
 
-                <Link href="#">
-               
-                </Link>
+                <Link href="#"></Link>
               </div>
             </SwiperSlide>
 
             <SwiperSlide>
               <div className="single-offer-box">
-                <img src="/images/offer-img4.jpg" alt="image" className="w-100" />
+                <img
+                  src="/images/offer-img4.jpg"
+                  alt="image"
+                  className="w-100"
+                />
 
                 <div className="offer-content">
                   <h3>Shirts</h3>
                   <span>548 Products</span>
                 </div>
 
-                <Link href="#">
-            
-                </Link>
+                <Link href="#"></Link>
               </div>
             </SwiperSlide>
 
             <SwiperSlide>
               <div className="single-offer-box">
-                <img src="/images/offer-img3.jpg" alt="image" className="w-100" />
+                <img
+                  src="/images/offer-img3.jpg"
+                  alt="image"
+                  className="w-100"
+                />
 
                 <div className="offer-content">
                   <h3>Footwaer</h3>
                   <span>175 Products</span>
                 </div>
 
-                <Link href="#">
-                
-                </Link>
+                <Link href="#"></Link>
               </div>
             </SwiperSlide>
           </Swiper>

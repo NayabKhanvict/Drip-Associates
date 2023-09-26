@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import LatestProducts from "./LatestProducts";
@@ -13,7 +14,7 @@ const Products = () => {
             <div className="section-title">
               <h2>Product Overview</h2>
             </div>
-            
+
             <Tabs className="without-bg">
               <TabList>
                 <Tab>

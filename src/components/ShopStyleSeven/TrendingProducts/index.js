@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import AllProducts from "./AllProducts";
@@ -12,7 +13,8 @@ const TrendingProducts = () => {
           <div className="products-category-tab-style-2">
             <div className="title">
               <h2>
-                <span className="dot"></span> Trending Products</h2>
+                <span className="dot"></span> Trending Products
+              </h2>
             </div>
 
             <Tabs>

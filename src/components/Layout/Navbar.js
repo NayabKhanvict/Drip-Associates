@@ -5,6 +5,7 @@ import TopPanel from "./TopPanel";
 import TopHeader from "./TopHeader";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const Navbar = () => {
   const currentRoute = usePathname();
@@ -53,7 +54,12 @@ const Navbar = () => {
           <div className="container position-relative">
             <nav className="navbar navbar-expand-lg navbar-light">
               <Link href="/" className="navbar-brand">
-                <img src="/images/logo.png" alt="logo" />
+                <Image
+                  src="/images/logo3.png"
+                  alt="logo"
+                  width={60}
+                  height={60}
+                />
               </Link>
 
               <button

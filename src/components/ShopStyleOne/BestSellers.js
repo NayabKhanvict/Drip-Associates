@@ -1,13 +1,17 @@
-'use client'
+"use client";
 
 import React, { useState } from "react";
 import Link from "next/link";
+import ProductCard from "../ProductCard/ProductCard";
+import data from "../../jsonData/home-1_productData/home_1.json";
 
 const BestSeller = () => {
   const [isActiveQuickViewModal, setActiveQuickViewModal] = useState("false");
   const handleToggleQuickViewModal = () => {
     setActiveQuickViewModal(!isActiveQuickViewModal);
   };
+
+  const bestSellerProduct = data.products.bestSellers_product;
 
   return (
     <>
@@ -19,222 +23,10 @@ const BestSeller = () => {
             </h2>
           </div>
 
-          <div className="row">
-            <div className="col-lg-3 col-md-6 col-sm-6">
-              <div className="single-product-box">
-                <div className="product-image">
-                  <Link href="/products/product-details/">
-                    <img src="/images/img7.jpg" alt="image" />
-                    <img src="/images/img-hover7.jpg" alt="image" />
-                  </Link>
-
-                  <ul>
-                    <li>
-                      <button
-                        type="button"
-                        title="Quick View"
-                        onClick={handleToggleQuickViewModal}
-                      >
-                        <i className="far fa-eye"></i>
-                      </button>
-                    </li>
-                    <li>
-                      <button type="button" title="Add to Wishlist">
-                        <i className="far fa-heart"></i>
-                      </button>
-                    </li>
-                    <li>
-                      <button type="button" title="Add to Compare">
-                        <i className="fas fa-sync"></i>
-                      </button>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="product-content">
-                  <h3>
-                    <Link href="/products/product-details/">
-                      Women's sherpa lined hoodie
-                    </Link>
-                  </h3>
-
-                  <div className="product-price">
-                    <span className="old-price">$300.00</span>
-                    <span className="new-price">$299.00</span>
-                  </div>
-
-                  <div className="rating">
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="far fa-star"></i>
-                  </div>
-
-                  <button className="btn btn-light">Add to Cart</button>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-lg-3 col-md-6 col-sm-6">
-              <div className="single-product-box">
-                <div className="product-image">
-                  <Link href="/products/product-details/">
-                    <img src="/images/img1.jpg" alt="image" />
-                    <img src="/images/img-hover1.jpg" alt="image" />
-                  </Link>
-
-                  <ul>
-                    <li>
-                      <button
-                        type="button"
-                        title="Quick View"
-                        onClick={handleToggleQuickViewModal}
-                      >
-                        <i className="far fa-eye"></i>
-                      </button>
-                    </li>
-                    <li>
-                      <button type="button" title="Add to Wishlist">
-                        <i className="far fa-heart"></i>
-                      </button>
-                    </li>
-                    <li>
-                      <button type="button" title="Add to Compare">
-                        <i className="fas fa-sync"></i>
-                      </button>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="product-content">
-                  <h3>
-                    <Link href="/products/product-details/">
-                      Linen crochet trim t-shirt
-                    </Link>
-                  </h3>
-
-                  <div className="product-price">
-                    <span className="new-price">$191.00</span>
-                  </div>
-
-                  <div className="rating">
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="far fa-star"></i>
-                  </div>
-
-                  <button className="btn btn-light">Add to Cart</button>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-lg-3 col-md-6 col-sm-6">
-              <div className="single-product-box">
-                <div className="product-image">
-                  <Link href="/products/product-details/">
-                    <img src="/images/img3.jpg" alt="image" />
-                    <img src="/images/img-hover3.jpg" alt="image" />
-                  </Link>
-
-                  <ul>
-                    <li>
-                      <button
-                        type="button"
-                        title="Quick View"
-                        onClick={handleToggleQuickViewModal}
-                      >
-                        <i className="far fa-eye"></i>
-                      </button>
-                    </li>
-                    <li>
-                      <button type="button" title="Add to Wishlist">
-                        <i className="far fa-heart"></i>
-                      </button>
-                    </li>
-                    <li>
-                      <button type="button" title="Add to Compare">
-                        <i className="fas fa-sync"></i>
-                      </button>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="product-content">
-                  <h3>
-                    <Link href="/products/product-details/">Mermaid pencil midi lace</Link>
-                  </h3>
-
-                  <div className="product-price">
-                    <span className="new-price">$166.00</span>
-                  </div>
-
-                  <div className="rating">
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="far fa-star"></i>
-                  </div>
-
-                  <button className="btn btn-light">Add to Cart</button>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-6 col-sm-6">
-              <div className="single-product-box">
-                <div className="product-image">
-                  <Link href="/products/product-details/">
-                    <img src="/images/img6.jpg" alt="image" />
-                    <img src="/images/img-hover6.jpg" alt="image" />
-                  </Link>
-
-                  <ul>
-                    <li>
-                      <button
-                        type="button"
-                        title="Quick View"
-                        onClick={handleToggleQuickViewModal}
-                      >
-                        <i className="far fa-eye"></i>
-                      </button>
-                    </li>
-                    <li>
-                      <button type="button" title="Add to Wishlist">
-                        <i className="far fa-heart"></i>
-                      </button>
-                    </li>
-                    <li>
-                      <button type="button" title="Add to Compare">
-                        <i className="fas fa-sync"></i>
-                      </button>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="product-content">
-                  <h3>
-                    <Link href="/products/product-details/">Tenku remastered</Link>
-                  </h3>
-
-                  <div className="product-price">
-                    <span className="new-price">$177.00</span>
-                  </div>
-
-                  <div className="rating">
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="far fa-star"></i>
-                  </div>
-
-                  <button className="btn btn-light">Add to Cart</button>
-                </div>
-              </div>
-            </div>
+          <div className="row" style={{ display: "flex", flexWrap: "wrap" }}>
+            {bestSellerProduct.map((product) => (
+              <ProductCard product={product} />
+            ))}
           </div>
 
           {/* Product Quick View Modal */}
@@ -267,7 +59,9 @@ const BestSeller = () => {
                   <div className="col-lg-6 col-md-6">
                     <div className="product-content">
                       <h3>
-                        <Link href="/products/product-details/">Criss-cross V neck bodycon</Link>
+                        <Link href="/products/product-details/">
+                          Criss-cross V neck bodycon
+                        </Link>
                       </h3>
 
                       <div className="price">
@@ -296,7 +90,8 @@ const BestSeller = () => {
                           <Link href="#">In stock (7 items)</Link>
                         </li>
                         <li>
-                          <span>Product Type:</span> <Link href="#">T-Shirt</Link>
+                          <span>Product Type:</span>{" "}
+                          <Link href="#">T-Shirt</Link>
                         </li>
                       </ul>
 
@@ -332,7 +127,11 @@ const BestSeller = () => {
                             ></Link>
                           </li>
                           <li>
-                            <Link title="Teal" className="color-teal" href="#"></Link>
+                            <Link
+                              title="Teal"
+                              className="color-teal"
+                              href="#"
+                            ></Link>
                           </li>
                         </ul>
                       </div>
@@ -387,7 +186,10 @@ const BestSeller = () => {
               </div>
             </div>
 
-            <span className="close-modal" onClick={handleToggleQuickViewModal}></span>
+            <span
+              className="close-modal"
+              onClick={handleToggleQuickViewModal}
+            ></span>
           </div>
           {/* End Product Quick View Modal */}
         </div>

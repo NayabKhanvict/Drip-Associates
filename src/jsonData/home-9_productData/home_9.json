@@ -1,0 +1,258 @@
+{
+  "specialoffer_product": [
+    {
+      "title": "Long sleeve Jacket",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reiciendis illo porro quaerat libero impedit delectus similique ducimus molestiae eos?",
+      "price": 191,
+      "old_price": 150,
+      "category": "women",
+      "type": "shirts",
+      "image": "/images/img1.jpg",
+      "imgHover": "/images/img-hover1.jpg",
+      "gender": "female",
+      "detailImg": [
+        { "_id": 1, "image_1": "/images/img1.jpg" },
+        { "_id": 2, "image_1": "/images/img2.jpg" },
+        { "_id": 3, "image_1": "/images/img3.jpg" }
+      ],
+      "rating": 4,
+      "quantity": 1
+    },
+    {
+      "title": "Long sleeve Jacket",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reiciendis illo porro quaerat libero impedit delectus similique ducimus molestiae eos?",
+      "price": 191,
+      "old_price": 150,
+      "category": "women",
+      "type": "shirts",
+      "image": "/images/img1.jpg",
+      "imgHover": "/images/img-hover1.jpg",
+      "gender": "female",
+      "detailImg": [
+        { "_id": 1, "image_1": "/images/img1.jpg" },
+        { "_id": 2, "image_1": "/images/img2.jpg" },
+        { "_id": 3, "image_1": "/images/img3.jpg" }
+      ],
+      "rating": 4,
+      "quantity": 1
+    },
+    {
+      "title": "Long sleeve Jacket",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reiciendis illo porro quaerat libero impedit delectus similique ducimus molestiae eos?",
+      "price": 191,
+      "old_price": 150,
+      "category": "women",
+      "type": "shirts",
+      "image": "/images/img1.jpg",
+      "imgHover": "/images/img-hover1.jpg",
+      "gender": "female",
+      "detailImg": [
+        { "_id": 1, "image_1": "/images/img1.jpg" },
+        { "_id": 2, "image_1": "/images/img2.jpg" },
+        { "_id": 3, "image_1": "/images/img3.jpg" }
+      ],
+      "rating": 4,
+      "quantity": 1
+    },
+    {
+      "title": "Long sleeve Jacket",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reiciendis illo porro quaerat libero impedit delectus similique ducimus molestiae eos?",
+      "price": 191,
+      "old_price": 150,
+      "category": "women",
+      "type": "shirts",
+      "image": "/images/img1.jpg",
+      "imgHover": "/images/img-hover1.jpg",
+      "gender": "female",
+      "detailImg": [
+        { "_id": 1, "image_1": "/images/img1.jpg" },
+        { "_id": 2, "image_1": "/images/img2.jpg" },
+        { "_id": 3, "image_1": "/images/img3.jpg" }
+      ],
+      "rating": 4,
+      "quantity": 1
+    },
+    {
+      "title": "Long sleeve Jacket",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reiciendis illo porro quaerat libero impedit delectus similique ducimus molestiae eos?",
+      "price": 191,
+      "old_price": 150,
+      "category": "women",
+      "type": "shirts",
+      "image": "/images/img1.jpg",
+      "imgHover": "/images/img-hover1.jpg",
+      "gender": "female",
+      "detailImg": [
+        { "_id": 1, "image_1": "/images/img1.jpg" },
+        { "_id": 2, "image_1": "/images/img2.jpg" },
+        { "_id": 3, "image_1": "/images/img3.jpg" }
+      ],
+      "rating": 4,
+      "quantity": 1
+    },
+    {
+      "title": "Long sleeve Jacket",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reiciendis illo porro quaerat libero impedit delectus similique ducimus molestiae eos?",
+      "price": 191,
+      "old_price": 150,
+      "category": "women",
+      "type": "shirts",
+      "image": "/images/img1.jpg",
+      "imgHover": "/images/img-hover1.jpg",
+      "gender": "female",
+      "detailImg": [
+        { "_id": 1, "image_1": "/images/img1.jpg" },
+        { "_id": 2, "image_1": "/images/img2.jpg" },
+        { "_id": 3, "image_1": "/images/img3.jpg" }
+      ],
+      "rating": 4,
+      "quantity": 1
+    },
+    {
+      "title": "Long sleeve Jacket",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reiciendis illo porro quaerat libero impedit delectus similique ducimus molestiae eos?",
+      "price": 191,
+      "old_price": 150,
+      "category": "women",
+      "type": "shirts",
+      "image": "/images/img1.jpg",
+      "imgHover": "/images/img-hover1.jpg",
+      "gender": "female",
+      "detailImg": [
+        { "_id": 1, "image_1": "/images/img1.jpg" },
+        { "_id": 2, "image_1": "/images/img2.jpg" },
+        { "_id": 3, "image_1": "/images/img3.jpg" }
+      ],
+      "rating": 4,
+      "quantity": 1
+    }
+  ],
+  "bestSellers_product": [
+    {
+      "title": "Long sleeve Jacket",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reiciendis illo porro quaerat libero impedit delectus similique ducimus molestiae eos?",
+      "price": 191,
+      "old_price": 150,
+      "category": "women",
+      "type": "shirts",
+      "image": "/images/img1.jpg",
+      "imgHover": "/images/img-hover1.jpg",
+      "gender": "female",
+      "detailImg": [
+        { "_id": 1, "image_1": "/images/img1.jpg" },
+        { "_id": 2, "image_1": "/images/img2.jpg" },
+        { "_id": 3, "image_1": "/images/img3.jpg" }
+      ],
+      "rating": 4,
+      "quantity": 1
+    },
+    {
+      "title": "Long sleeve Jacket",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reiciendis illo porro quaerat libero impedit delectus similique ducimus molestiae eos?",
+      "price": 191,
+      "old_price": 150,
+      "category": "women",
+      "type": "shirts",
+      "image": "/images/img1.jpg",
+      "imgHover": "/images/img-hover1.jpg",
+      "gender": "female",
+      "detailImg": [
+        { "_id": 1, "image_1": "/images/img1.jpg" },
+        { "_id": 2, "image_1": "/images/img2.jpg" },
+        { "_id": 3, "image_1": "/images/img3.jpg" }
+      ],
+      "rating": 4,
+      "quantity": 1
+    },
+    {
+      "title": "Long sleeve Jacket",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reiciendis illo porro quaerat libero impedit delectus similique ducimus molestiae eos?",
+      "price": 191,
+      "old_price": 150,
+      "category": "women",
+      "type": "shirts",
+      "image": "/images/img1.jpg",
+      "imgHover": "/images/img-hover1.jpg",
+      "gender": "female",
+      "detailImg": [
+        { "_id": 1, "image_1": "/images/img1.jpg" },
+        { "_id": 2, "image_1": "/images/img2.jpg" },
+        { "_id": 3, "image_1": "/images/img3.jpg" }
+      ],
+      "rating": 4,
+      "quantity": 1
+    },
+    {
+      "title": "Long sleeve Jacket",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reiciendis illo porro quaerat libero impedit delectus similique ducimus molestiae eos?",
+      "price": 191,
+      "old_price": 150,
+      "category": "women",
+      "type": "shirts",
+      "image": "/images/img1.jpg",
+      "imgHover": "/images/img-hover1.jpg",
+      "gender": "female",
+      "detailImg": [
+        { "_id": 1, "image_1": "/images/img1.jpg" },
+        { "_id": 2, "image_1": "/images/img2.jpg" },
+        { "_id": 3, "image_1": "/images/img3.jpg" }
+      ],
+      "rating": 4,
+      "quantity": 1
+    },
+    {
+      "title": "Long sleeve Jacket",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reiciendis illo porro quaerat libero impedit delectus similique ducimus molestiae eos?",
+      "price": 191,
+      "old_price": 150,
+      "category": "women",
+      "type": "shirts",
+      "image": "/images/img1.jpg",
+      "imgHover": "/images/img-hover1.jpg",
+      "gender": "female",
+      "detailImg": [
+        { "_id": 1, "image_1": "/images/img1.jpg" },
+        { "_id": 2, "image_1": "/images/img2.jpg" },
+        { "_id": 3, "image_1": "/images/img3.jpg" }
+      ],
+      "rating": 4,
+      "quantity": 1
+    },
+    {
+      "title": "Long sleeve Jacket",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reiciendis illo porro quaerat libero impedit delectus similique ducimus molestiae eos?",
+      "price": 191,
+      "old_price": 150,
+      "category": "women",
+      "type": "shirts",
+      "image": "/images/img1.jpg",
+      "imgHover": "/images/img-hover1.jpg",
+      "gender": "female",
+      "detailImg": [
+        { "_id": 1, "image_1": "/images/img1.jpg" },
+        { "_id": 2, "image_1": "/images/img2.jpg" },
+        { "_id": 3, "image_1": "/images/img3.jpg" }
+      ],
+      "rating": 4,
+      "quantity": 1
+    },
+    {
+      "title": "Long sleeve Jacket",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reiciendis illo porro quaerat libero impedit delectus similique ducimus molestiae eos?",
+      "price": 191,
+      "old_price": 150,
+      "category": "women",
+      "type": "shirts",
+      "image": "/images/img1.jpg",
+      "imgHover": "/images/img-hover1.jpg",
+      "gender": "female",
+      "detailImg": [
+        { "_id": 1, "image_1": "/images/img1.jpg" },
+        { "_id": 2, "image_1": "/images/img2.jpg" },
+        { "_id": 3, "image_1": "/images/img3.jpg" }
+      ],
+      "rating": 4,
+      "quantity": 1
+    }
+  ]
+}

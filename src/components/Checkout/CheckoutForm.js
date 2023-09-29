@@ -1,6 +1,34 @@
+"use client";
+import { loadStripe } from "@stripe/stripe-js";
+import { useSession } from "next-auth/react";
+
 import React from "react";
 
 const CheckoutForm = () => {
+  const { data: session } = useSession();
+  const stripePromise = loadStripe(
+    process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+  );
+  const handleCheckout = async () => {
+    const stripe = await stripePromise;
+    const response = await fetch("http://localhost:3000/api/checkout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        items: productData,
+        email: session?.user?.email,
+      }),
+    });
+    const data = await response.json();
+
+    if (response.ok) {
+      await dispatch(saveOrder({ order: productData, id: data.id }));
+      stripe?.redirectToCheckout({ sessionId: data.id });
+      dispatch(resetCart());
+    } else {
+      throw new Error("Failed to create Stripe Payment");
+    }
+  };
   return (
     <>
       <div className="checkout-area ptb-60">
@@ -300,7 +328,11 @@ const CheckoutForm = () => {
                     </p>
                   </div>
 
-                  <button type="button" className="btn btn-primary order-btn">
+                  <button
+                    type="button"
+                    className="btn btn-primary order-btn"
+                    onClick={handleCheckout}
+                  >
                     Place Order
                   </button>
                 </div>

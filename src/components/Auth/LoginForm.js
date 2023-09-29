@@ -1,7 +1,33 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Link from "next/link";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const LoginForm = () => {
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+      });
+
+      if (res.error) {
+        setError("Invalid Credentials");
+        return;
+      }
+
+      router.replace("/");
+    } catch (error) {
+      setError("Error during signIn: ", error);
+    }
+  };
   return (
     <>
       <div className="login-area ptb-60">
@@ -15,7 +41,7 @@ const LoginForm = () => {
                   </h2>
                 </div>
 
-                <form className="login-form">
+                <form className="login-form" onSubmit={handleSubmit}>
                   <div className="form-group">
                     <label>Email</label>
                     <input
@@ -24,6 +50,7 @@ const LoginForm = () => {
                       placeholder="Enter your name"
                       id="name"
                       name="name"
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
 
@@ -35,12 +62,14 @@ const LoginForm = () => {
                       placeholder="Enter your password"
                       id="password"
                       name="password"
+                      onChange={(e) => setPassword(e.target.value)}
                     />
                   </div>
 
                   <button type="submit" className="btn btn-primary">
                     Login
                   </button>
+                  <div style={{ color: "red", marginTop: "8px" }}>{error}</div>
 
                   <Link href="#" className="forgot-password">
                     Lost your password?

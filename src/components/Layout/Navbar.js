@@ -6,6 +6,7 @@ import TopHeader from "./TopHeader";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import logo from "../../../public/images/logo.png";
 
 const Navbar = () => {
   const currentRoute = usePathname();
@@ -54,12 +55,7 @@ const Navbar = () => {
           <div className="container position-relative">
             <nav className="navbar navbar-expand-lg navbar-light">
               <Link href="/" className="navbar-brand">
-                <Image
-                  src="/images/logo3.png"
-                  alt="logo"
-                  width={60}
-                  height={60}
-                />
+                <Image src={logo} alt="logo" height={30} />
               </Link>
 
               <button

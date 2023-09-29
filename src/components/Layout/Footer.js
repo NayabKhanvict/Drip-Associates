@@ -1,5 +1,7 @@
 import React from "react";
 import Link from "next/link";
+import logo from "../../../public/images/logo.png";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -11,7 +13,7 @@ const Footer = () => {
               <div className="single-footer-widget">
                 <div className="logo">
                   <Link href="/">
-                    <img src="/images/logo.png" alt="logo" />
+                    <Image src={logo} alt="logo" height={30} />
                   </Link>
                 </div>
 

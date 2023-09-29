@@ -6,6 +6,10 @@ import "react-accessible-accordion/dist/fancy-example.css";
 import "swiper/css";
 import "swiper/css/bundle";
 
+import { store } from "@/redux/store";
+import { Provider } from "react-redux";
+import { SessionProvider } from "next-auth/react";
+
 // Globals CSS
 import "../styles/style.css";
 // Responsive CSS
@@ -16,5 +20,9 @@ export default function StyledJsxRegistry({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return (
+    <SessionProvider>
+      <Provider store={store}>{children}</Provider>
+    </SessionProvider>
+  );
 }

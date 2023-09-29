@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
@@ -267,34 +268,34 @@ const DetailsTab = () => {
                   <h3>Write a Review</h3>
 
                   <form>
-										<div className="row">
-											<div className="col-lg-6">
-												<div className="form-group">
-													<label>Name</label>
-													<input
-														type="text"
-														id="name"
-														name="name"
-														placeholder="Enter your name"
-														className="form-control"
-													/>
-												</div>
-											</div>
+                    <div className="row">
+                      <div className="col-lg-6">
+                        <div className="form-group">
+                          <label>Name</label>
+                          <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                            className="form-control"
+                          />
+                        </div>
+                      </div>
 
-											<div className="col-lg-6">
-												<div className="form-group">
-													<label>Email</label>
-													<input
-														type="email"
-														id="email"
-														name="email"
-														placeholder="Enter your email"
-														className="form-control"
-													/>
-												</div>
-											</div>
-										</div>
-                     
+                      <div className="col-lg-6">
+                        <div className="form-group">
+                          <label>Email</label>
+                          <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            className="form-control"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
                     <div className="review-rating">
                       <p>Rate this item</p>
 
@@ -324,41 +325,41 @@ const DetailsTab = () => {
                       </div>
 
                       <div className="star-rating">
-												<input type="radio" name="star" id="five" />
-												<label htmlFor="five">
-													<svg className="star">
-														<use xlinkHref="#star" />
-													</svg>
-												</label>
+                        <input type="radio" name="star" id="five" />
+                        <label htmlFor="five">
+                          <svg className="star">
+                            <use xlinkHref="#star" />
+                          </svg>
+                        </label>
 
-												<input type="radio" name="star" id="four" />
-												<label htmlFor="four">
-													<svg className="star">
-														<use xlinkHref="#star" />
-													</svg>
-												</label>
+                        <input type="radio" name="star" id="four" />
+                        <label htmlFor="four">
+                          <svg className="star">
+                            <use xlinkHref="#star" />
+                          </svg>
+                        </label>
 
-												<input type="radio" name="star" id="three" />
-												<label htmlFor="three">
-													<svg className="star">
-														<use xlinkHref="#star" />
-													</svg>
-												</label>
+                        <input type="radio" name="star" id="three" />
+                        <label htmlFor="three">
+                          <svg className="star">
+                            <use xlinkHref="#star" />
+                          </svg>
+                        </label>
 
-												<input type="radio" name="star" id="two" />
-												<label htmlFor="two">
-													<svg className="star">
-														<use xlinkHref="#star" />
-													</svg>
-												</label>
+                        <input type="radio" name="star" id="two" />
+                        <label htmlFor="two">
+                          <svg className="star">
+                            <use xlinkHref="#star" />
+                          </svg>
+                        </label>
 
-												<input type="radio" name="star" id="one" />
-												<label htmlFor="one">
-													<svg className="star">
-														<use xlinkHref="#star" />
-													</svg>
-												</label>
-											</div>
+                        <input type="radio" name="star" id="one" />
+                        <label htmlFor="one">
+                          <svg className="star">
+                            <use xlinkHref="#star" />
+                          </svg>
+                        </label>
+                      </div>
                     </div>
 
                     <div className="form-group">

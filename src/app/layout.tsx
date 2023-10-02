@@ -1,9 +1,9 @@
-import Navbar from "@/components/Layout/Navbar";
 import Footer from "@/components/Layout/Footer";
 import GoTop from "@/components/Layout/GoTop";
 import "./globals.css";
 import type { Metadata } from "next";
-import StyledJsxRegistry from "@/components/Provider";
+import LayoutProvider from "@/components/Provider";
+import Navbar from "@/components/Layout/Navbar";
 
 export const metadata: Metadata = {
   title: "Drip-Associates - React Next eCommerce Templates",
@@ -18,12 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <StyledJsxRegistry>
+        <LayoutProvider>
           <Navbar />
           {children}
           <Footer />
           <GoTop />
-        </StyledJsxRegistry>
+        </LayoutProvider>
       </body>
     </html>
   );

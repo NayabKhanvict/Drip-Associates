@@ -29,8 +29,20 @@
     ".next/types/**/*.ts",
     "src/lib/mongodb.js",
     "src/models/user.js",
-    "src/components/About/AboutContent.js",
-    "src/components/About/AboutContent.js"
+    "src/components/About/AboutContent.tsx",
+    "src/components/About/AboutContent.tsx",
+    "src/components/ShopStyleOne/Products/index.tsx",
+    "src/components/ShopStyleOne/Products/FeaturedProducts.tsx",
+    "src/components/ShopStyleOne/Products/FeaturedProducts.tsx",
+    "src/components/ShopStyleOne/TrendingProducts.tsx",
+    "src/components/ShopStyleOne/OfferArea.tsx",
+    "src/components/ShopStyleOne/Facility.tsx",
+    "src/components/ShopStyleOne/CategoryProducts.tsx",
+    "src/components/ShopStyleOne/BestSellers.tsx",
+    "src/components/ShopStyleOne/Banner.tsx",
+    "src/components/ShopStyleOne/Products/SpecialProducts.tsx",
+    "src/components/ShopStyleOne/Products/LatestProducts.tsx",
+    "src/components/ProductCard/ProductCard.js"
   ],
   "exclude": ["node_modules"]
 }

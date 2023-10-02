@@ -6,7 +6,6 @@ import "react-accessible-accordion/dist/fancy-example.css";
 import "swiper/css";
 import "swiper/css/bundle";
 
-import { store } from "@/redux/store";
 import { Provider } from "react-redux";
 import { SessionProvider } from "next-auth/react";
 
@@ -14,8 +13,9 @@ import { SessionProvider } from "next-auth/react";
 import "../styles/style.css";
 // Responsive CSS
 import "../styles/responsive.css";
+import store from "@/redux/store";
 
-export default function StyledJsxRegistry({
+export default function LayoutProvider({
   children,
 }: {
   children: React.ReactNode;

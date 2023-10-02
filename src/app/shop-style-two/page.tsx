@@ -1,37 +1,38 @@
 import React from "react";
-import Banner from "@/components/ShopStyleTwo/Banner";
-import OfferArea from "@/components/ShopStyleTwo/OfferArea";
-import Products from "@/components/ShopStyleTwo/Products";
-import CategoryProducts from "@/components/ShopStyleTwo/CategoryProducts";
-import TrendingProducts from "@/components/ShopStyleTwo/TrendingProducts";
-import BestSeller from "@/components/ShopStyleTwo/BestSellers";
-import Facility from "@/components/ShopStyleTwo/Facility";
-import Testimonials from "@/components/Common/Testimonials";
-import News from "@/components/Common/News";
+import BannerSlider from "@/components/ShopStyleSix/BannerSlider";
+import ProductCategories from "@/components/ShopStyleSix/ProductCategories";
+import AllProducts from "@/components/ShopStyleSix/AllProducts";
+import ProductsCategoryStyleTwo from "@/components/ShopStyleSix/ProductsCategoryStyleTwo";
+import TrendingProducts from "@/components/ShopStyleSix/TrendingProducts";
+import BestSeller from "@/components/ShopStyleSix/BestSeller";
+import Facility from "@/components/Common/Facility";
+import TestimonialsTwo from "@/components/Common/TestimonialsTwo";
+import NewsTwo from "@/components/Common/NewsTwo";
 import Subscribe from "@/components/Common/Subscribe";
 import Partner from "@/components/Common/Partner";
 import InstagramPhoto from "@/components/Common/InstagramPhoto";
-
+import { home2_bannerData } from "@/constant/home-2_data";
+import data from "@/jsonData/home-2_productData/home_2.json";
 const ShopStyleTwo = () => {
   return (
     <>
-      <Banner />
+      <BannerSlider bannerData={home2_bannerData} />
 
-      <OfferArea />
+      <ProductCategories />
 
-      <Products />
+      <AllProducts data={data} />
 
-      <CategoryProducts />
+      <ProductsCategoryStyleTwo />
 
-      <TrendingProducts />
+      <TrendingProducts data={data} />
 
-      <BestSeller />
+      <BestSeller data={data} />
 
       <Facility />
 
-      <Testimonials />
+      <TestimonialsTwo />
 
-      <News />
+      <NewsTwo />
 
       <Subscribe />
 

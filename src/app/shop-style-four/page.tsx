@@ -1,28 +1,39 @@
 import React from "react";
-import Banner from "@/components/ShopStyleFour/Banner";
-import Facility from "@/components/ShopStyleFour/Facility";
-import TrendingProducts from "@/components/ShopStyleFour/TrendingProducts";
-import OfferArea from "@/components/ShopStyleFour/OfferArea";
-import BestSeller from "@/components/ShopStyleFour/BestSellers";
-import News from "@/components/Common/News";
+import BannerSlider from "@/components/ShopStyleSix/BannerSlider";
+import ProductCategories from "@/components/ShopStyleSix/ProductCategories";
+import AllProducts from "@/components/ShopStyleSix/AllProducts";
+import ProductsCategoryStyleTwo from "@/components/ShopStyleSix/ProductsCategoryStyleTwo";
+import TrendingProducts from "@/components/ShopStyleSix/TrendingProducts";
+import BestSeller from "@/components/ShopStyleSix/BestSeller";
+import Facility from "@/components/Common/Facility";
+import TestimonialsTwo from "@/components/Common/TestimonialsTwo";
+import NewsTwo from "@/components/Common/NewsTwo";
 import Subscribe from "@/components/Common/Subscribe";
 import Partner from "@/components/Common/Partner";
 import InstagramPhoto from "@/components/Common/InstagramPhoto";
+import { home4_bannerData } from "@/constant/home-4_data";
+import data from "@/jsonData/home-2_productData/home_2.json";
 
 const ShopStyleFour = () => {
   return (
     <>
-      <Banner />
+      <BannerSlider bannerData={home4_bannerData} />
+
+      <ProductCategories />
+
+      <AllProducts data={data} />
+
+      <ProductsCategoryStyleTwo />
+
+      <TrendingProducts data={data} />
+
+      <BestSeller data={data} />
 
       <Facility />
 
-      <TrendingProducts />
+      <TestimonialsTwo />
 
-      <BestSeller />
-
-      <OfferArea />
-
-      <News />
+      <NewsTwo />
 
       <Subscribe />
 

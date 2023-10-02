@@ -11,11 +11,12 @@ import NewsTwo from "@/components/Common/NewsTwo";
 import Subscribe from "@/components/Common/Subscribe";
 import Partner from "@/components/Common/Partner";
 import InstagramPhoto from "@/components/Common/InstagramPhoto";
+import { home4_bannerData } from "@/constant/home-4_data";
 
 const ShopStyleSix = () => {
   return (
     <>
-      <BannerSlider />
+      <BannerSlider bannerData={home4_bannerData} />
 
       <ProductCategories />
 

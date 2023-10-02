@@ -1,5 +1,5 @@
 import React from "react";
-import BannerSlider from "@/components/ShopStyleNine/BannerSlider";
+import BannerSlider from "@/components/ShopStyleSix/BannerSlider";
 import ProductCategories from "@/components/ShopStyleNine/ProductCategories";
 import SpecialOffer from "@/components/ShopStyleNine/SpecialOffer";
 import BestSellersProducts from "@/components/ShopStyleNine/BestSellersProducts";
@@ -7,12 +7,13 @@ import Facility from "@/components/Common/Facility";
 import Subscribe from "@/components/Common/Subscribe";
 import Partner from "@/components/Common/Partner";
 import InstagramPhoto from "@/components/Common/InstagramPhoto";
+import { home9_bannerData } from "@/constant/home-9_data";
 
 const ShopStyleNine = () => {
   return (
     <div className="boxed-layout-wrapper">
       <div className="boxed-layout-content">
-        <BannerSlider />
+        <BannerSlider bannerData={home9_bannerData} />
 
         <ProductCategories />
 

@@ -1,5 +1,5 @@
 import React from "react";
-import BannerSlider from "@/components/ShopStyleSeven/BannerSlider";
+import BannerSlider from "@/components/ShopStyleSix/BannerSlider";
 import ProductCategories from "@/components/ShopStyleSeven/ProductCategories";
 import PopularProducts from "@/components/ShopStyleSeven/PopularProducts";
 import ProductsCategoryStyleTwo from "@/components/ShopStyleSeven/ProductsCategoryStyleTwo";
@@ -11,11 +11,12 @@ import NewsThree from "@/components/Common/NewsThree";
 import Subscribe from "@/components/Common/Subscribe";
 import Partner from "@/components/Common/Partner";
 import InstagramPhoto from "@/components/Common/InstagramPhoto";
+import { home7_bannerData } from "@/constant/home-7_data";
 
 const ShopStyleSeven = () => {
   return (
     <>
-      <BannerSlider />
+      <BannerSlider bannerData={home7_bannerData} />
 
       <ProductCategories />
 

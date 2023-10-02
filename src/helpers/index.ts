@@ -1,5 +1,3 @@
-import { latestroduct } from "@/constant/products";
-
 export const getProducts = async () => {
   const res = await fetch("https://fakestoreapiserver.reactbd.com/smart");
   if (!res.ok) {
@@ -17,7 +15,7 @@ export const getTrendingProducts = async () => {
   return res.json();
 };
 
-export const getSingleProudct = (_id: number) => {
-  const item = latestroduct.find((product) => product._id === _id);
-  return item;
-};
+// export const getSingleProudct = (_id: number) => {
+//   const item = latestroduct.find((product) => product._id === _id);
+//   return item;
+// };

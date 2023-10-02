@@ -17,3 +17,10 @@ export interface Product {
   rating: number;
   quantity: number;
 }
+
+export interface BannerData {
+  offer: string;
+  title: string;
+  description: string;
+  Image: string;
+}

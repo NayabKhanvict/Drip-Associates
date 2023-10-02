@@ -2,6 +2,7 @@
   "products": {
     "latest_products": [
       {
+        "id": 1,
         "title": "Long sleeve Jacket",
         "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
         "colors": ["#336600", "#993300"],
@@ -19,6 +20,7 @@
         "size": ["S", "M", "L", "XL"]
       },
       {
+        "id": 2,
         "title": "Long sleeve Jacket",
         "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
         "colors": ["#336600", "#993300"],
@@ -36,6 +38,7 @@
         "size": ["S", "M", "L", "XL"]
       },
       {
+        "id": 3,
         "title": "Long sleeve Jacket",
         "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
         "colors": ["#336600", "#993300"],
@@ -53,6 +56,7 @@
         "size": ["S", "M", "L", "XL"]
       },
       {
+        "id": 4,
         "title": "Long sleeve Jacket",
         "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
         "colors": ["#336600", "#993300"],
@@ -70,6 +74,7 @@
         "size": ["S", "M", "L", "XL"]
       },
       {
+        "id": 5,
         "title": "Long sleeve Jacket",
         "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
         "colors": ["#336600", "#993300"],
@@ -87,6 +92,7 @@
         "size": ["S", "M", "L", "XL"]
       },
       {
+        "id": 6,
         "title": "Long sleeve Jacket",
         "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
         "colors": ["#336600", "#993300"],
@@ -101,45 +107,12 @@
         "rating": 4.5,
         "stock": 90,
         "gender": "women",
-        "size": ["S", "M", "L", "XL"]
-      },
-      {
-        "title": "Long sleeve Jacket",
-        "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
-        "colors": ["#336600", "#993300"],
-        "imghover": "/images/img-hover5.jpg",
-        "img": "images/img5.jpg",
-        "images": ["/images/img1.jpg", "/images/img2.jpg", "/images/img3.jpg"],
-        "company": "CasualChic",
-        "price": 200,
-        "oldprice": 220,
-        "category": "clothes",
-        "type": "Flats",
-        "rating": 4.5,
-        "stock": 90,
-        "gender": "man",
-        "size": ["S", "M", "L", "XL"]
-      },
-      {
-        "title": "Long sleeve Jacket",
-        "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
-        "colors": ["#336600", "#993300"],
-        "imghover": "/images/img-hover6.jpg",
-        "img": "images/img6.jpg",
-        "images": ["/images/img1.jpg", "/images/img2.jpg", "/images/img3.jpg"],
-        "company": "CasualChic",
-        "price": 200,
-        "oldprice": 220,
-        "category": "accessories",
-        "type": "Flats",
-        "rating": 4.5,
-        "stock": 90,
-        "gender": "man",
         "size": ["S", "M", "L", "XL"]
       }
     ],
     "special_products": [
       {
+        "id": 7,
         "title": "Long sleeve Jacket",
         "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
         "colors": ["#336600", "#993300"],
@@ -157,6 +130,7 @@
         "size": ["S", "M", "L", "XL"]
       },
       {
+        "id": 8,
         "title": "Long sleeve Jacket",
         "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
         "colors": ["#336600", "#993300"],
@@ -174,6 +148,7 @@
         "size": ["S", "M", "L", "XL"]
       },
       {
+        "id": 9,
         "title": "Long sleeve Jacket",
         "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
         "colors": ["#336600", "#993300"],
@@ -191,6 +166,7 @@
         "size": ["S", "M", "L", "XL"]
       },
       {
+        "id": 10,
         "title": "Long sleeve Jacket",
         "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
         "colors": ["#336600", "#993300"],
@@ -208,6 +184,7 @@
         "size": ["S", "M", "L", "XL"]
       },
       {
+        "id": 11,
         "title": "Long sleeve Jacket",
         "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
         "colors": ["#336600", "#993300"],
@@ -225,6 +202,7 @@
         "size": ["S", "M", "L", "XL"]
       },
       {
+        "id": 12,
         "title": "Long sleeve Jacket",
         "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
         "colors": ["#336600", "#993300"],
@@ -239,45 +217,12 @@
         "rating": 4.5,
         "stock": 90,
         "gender": "man",
-        "size": ["S", "M", "L", "XL"]
-      },
-      {
-        "title": "Long sleeve Jacket",
-        "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
-        "colors": ["#336600", "#993300"],
-        "imghover": "/images/img-hover1.jpg",
-        "img": "images/img7.jpg",
-        "images": ["/images/img7.jpg", "/images/img2.jpg", "/images/img3.jpg"],
-        "company": "CasualChic",
-        "price": 200,
-        "oldprice": 220,
-        "category": "shoes",
-        "type": "Flats",
-        "rating": 4.5,
-        "stock": 90,
-        "gender": "women",
-        "size": ["S", "M", "L", "XL"]
-      },
-      {
-        "title": "Long sleeve Jacket",
-        "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
-        "colors": ["#336600", "#993300"],
-        "imghover": "/images/img-hover8.jpg",
-        "img": "images/img8.jpg",
-        "images": ["/images/img1.jpg", "/images/img2.jpg", "/images/img3.jpg"],
-        "company": "CasualChic",
-        "price": 200,
-        "oldprice": 220,
-        "category": "clothes",
-        "type": "Flats",
-        "rating": 4.5,
-        "stock": 90,
-        "gender": "women",
         "size": ["S", "M", "L", "XL"]
       }
     ],
     "featured_products": [
       {
+        "id": 13,
         "title": "Long sleeve Jacket",
         "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
         "colors": ["#336600", "#993300"],
@@ -295,6 +240,7 @@
         "size": ["S", "M", "L", "XL"]
       },
       {
+        "id": 14,
         "title": "Long sleeve Jacket",
         "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
         "colors": ["#336600", "#993300"],
@@ -312,6 +258,7 @@
         "size": ["S", "M", "L", "XL"]
       },
       {
+        "id": 15,
         "title": "Long sleeve Jacket",
         "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
         "colors": ["#336600", "#993300"],
@@ -329,6 +276,7 @@
         "size": ["S", "M", "L", "XL"]
       },
       {
+        "id": 16,
         "title": "Long sleeve Jacket",
         "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
         "colors": ["#336600", "#993300"],
@@ -346,6 +294,7 @@
         "size": ["S", "M", "L", "XL"]
       },
       {
+        "id": 17,
         "title": "Long sleeve Jacket",
         "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
         "colors": ["#336600", "#993300"],
@@ -363,6 +312,7 @@
         "size": ["S", "M", "L", "XL"]
       },
       {
+        "id": 18,
         "title": "Long sleeve Jacket",
         "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
         "colors": ["#336600", "#993300"],
@@ -373,40 +323,6 @@
         "price": 200,
         "oldprice": 220,
         "category": "accessories",
-        "type": "Flats",
-        "rating": 4.5,
-        "stock": 90,
-        "gender": "women",
-        "size": ["S", "M", "L", "XL"]
-      },
-      {
-        "title": "Long sleeve Jacket",
-        "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
-        "colors": ["#336600", "#993300"],
-        "imghover": "/images/img-hover4.jpg",
-        "img": "images/img4.jpg",
-        "images": ["/images/img1.jpg", "/images/img2.jpg", "/images/img3.jpg"],
-        "company": "CasualChic",
-        "price": 200,
-        "oldprice": 220,
-        "category": "shoes",
-        "type": "Flats",
-        "rating": 4.5,
-        "stock": 90,
-        "gender": "man",
-        "size": ["S", "M", "L", "XL"]
-      },
-      {
-        "title": "Long sleeve Jacket",
-        "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
-        "colors": ["#336600", "#993300"],
-        "imghover": "/images/img-hover8.jpg",
-        "img": "images/img8.jpg",
-        "images": ["/images/img1.jpg", "/images/img2.jpg", "/images/img3.jpg"],
-        "company": "CasualChic",
-        "price": 200,
-        "oldprice": 220,
-        "category": "clothes",
         "type": "Flats",
         "rating": 4.5,
         "stock": 90,
@@ -416,6 +332,7 @@
     ],
     "trending_products": [
       {
+        "id": 19,
         "title": "Long sleeve Jacket",
         "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
         "colors": ["#336600", "#993300"],
@@ -433,6 +350,7 @@
         "size": ["S", "M", "L", "XL"]
       },
       {
+        "id": 20,
         "title": "Long sleeve Jacket",
         "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
         "colors": ["#336600", "#993300"],
@@ -450,6 +368,7 @@
         "size": ["S", "M", "L", "XL"]
       },
       {
+        "id": 21,
         "title": "Long sleeve Jacket",
         "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
         "colors": ["#336600", "#993300"],
@@ -467,6 +386,7 @@
         "size": ["S", "M", "L", "XL"]
       },
       {
+        "id": 22,
         "title": "Long sleeve Jacket",
         "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
         "colors": ["#336600", "#993300"],
@@ -484,6 +404,7 @@
         "size": ["S", "M", "L", "XL"]
       },
       {
+        "id": 23,
         "title": "Long sleeve Jacket",
         "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
         "colors": ["#336600", "#993300"],
@@ -501,6 +422,7 @@
         "size": ["S", "M", "L", "XL"]
       },
       {
+        "id": 24,
         "title": "Long sleeve Jacket",
         "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
         "colors": ["#336600", "#993300"],
@@ -520,6 +442,7 @@
     ],
     "bestSellers_product": [
       {
+        "id": 26,
         "title": "Long sleeve Jacket",
         "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
         "colors": ["#336600", "#993300"],
@@ -537,6 +460,7 @@
         "size": ["S", "M", "L", "XL"]
       },
       {
+        "id": 27,
         "title": "Long sleeve Jacket",
         "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
         "colors": ["#336600", "#993300"],
@@ -554,6 +478,7 @@
         "size": ["S", "M", "L", "XL"]
       },
       {
+        "id": 28,
         "title": "Long sleeve Jacket",
         "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
         "colors": ["#336600", "#993300"],

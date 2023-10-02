@@ -3,9 +3,9 @@ import { BannerData } from "@/types";
 export const home1_bannerData: BannerData[] = [
   {
     offer: "Limited Time Offer!",
-    title: "PROJECT YOUR EYES!",
+    title: "CLOTHING MADE FOR YOU!",
     description: "Take 20% Off 'Sale Must-Haves'",
-    Image: "/images/main-banner1.jpg",
+    Image: "/images/main-banner3.jpg",
   },
   {
     offer: "New Inspiration 2020!",

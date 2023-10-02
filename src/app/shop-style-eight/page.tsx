@@ -1,37 +1,39 @@
 import React from "react";
-import BannerSlider from "@/components/ShopStyleEight/BannerSlider";
-import ProductCategories from "@/components/ShopStyleEight/ProductCategories";
-import PopularProducts from "@/components/ShopStyleEight/PopularProducts";
-import ProductsCategoryStyleTwo from "@/components/ShopStyleEight/ProductsCategoryStyleTwo";
-import TrendingProducts from "@/components/ShopStyleEight/TrendingProducts";
+import BannerSlider from "@/components/ShopStyleSix/BannerSlider";
+import ProductCategories from "@/components/ShopStyleSix/ProductCategories";
+import AllProducts from "@/components/ShopStyleSix/AllProducts";
+import ProductsCategoryStyleTwo from "@/components/ShopStyleSix/ProductsCategoryStyleTwo";
+import TrendingProducts from "@/components/ShopStyleSix/TrendingProducts";
+import BestSeller from "@/components/ShopStyleSix/BestSeller";
 import Facility from "@/components/Common/Facility";
-import BestSellersProducts from "@/components/ShopStyleEight/BestSellersProducts";
 import TestimonialsTwo from "@/components/Common/TestimonialsTwo";
-import NewsThree from "@/components/Common/NewsThree";
+import NewsTwo from "@/components/Common/NewsTwo";
 import Subscribe from "@/components/Common/Subscribe";
 import Partner from "@/components/Common/Partner";
 import InstagramPhoto from "@/components/Common/InstagramPhoto";
+import { home8_bannerData } from "@/constant/home-8_data";
+import data from "@/jsonData/home-8_productData/home_8.json";
 
 const ShopStyleEight = () => {
   return (
     <>
-      <BannerSlider />
+      <BannerSlider bannerData={home8_bannerData} />
 
       <ProductCategories />
 
-      <PopularProducts />
+      <AllProducts data={data} />
 
       <ProductsCategoryStyleTwo />
 
-      <TrendingProducts />
+      <TrendingProducts data={data} />
+
+      <BestSeller data={data} />
 
       <Facility />
 
-      <BestSellersProducts />
-
       <TestimonialsTwo />
 
-      <NewsThree />
+      <NewsTwo />
 
       <Subscribe />
 

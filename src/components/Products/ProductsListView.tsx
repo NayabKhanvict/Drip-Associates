@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const ProductsListView = () => {
   const [isActiveQuickViewModal, setActiveQuickViewModal] =
-    useState<boolean>(false);
+    useState<boolean>(true);
   const handleToggleQuickViewModal = () => {
     setActiveQuickViewModal(!isActiveQuickViewModal);
   };

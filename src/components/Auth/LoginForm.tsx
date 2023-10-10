@@ -4,6 +4,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { setCookie } from "cookies-next";
 
 const LoginForm = () => {
   const router = useRouter();
@@ -16,6 +17,7 @@ const LoginForm = () => {
   };
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setCookie("logged", "true");
 
     try {
       const res = await signIn("credentials", {
@@ -27,7 +29,6 @@ const LoginForm = () => {
         setError("Invalid Credentials");
         return;
       }
-
       router.push("/");
     } catch (error) {
       setError(`Error during Sign in: ${error}`);

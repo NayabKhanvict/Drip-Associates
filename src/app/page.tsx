@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import BannerSlider from "@/components/ShopStyleSix/BannerSlider";
 import ProductCategories from "@/components/ShopStyleSix/ProductCategories";
 import AllProducts from "@/components/ShopStyleSix/AllProducts";
@@ -14,8 +14,15 @@ import Partner from "@/components/Common/Partner";
 import InstagramPhoto from "@/components/Common/InstagramPhoto";
 import { home1_bannerData } from "@/constant/home-1_data";
 import data from "@/jsonData/home-1_productData/home_1.json";
+import { fetchDataFromApi } from "@/redux/slices/dataSlice";
+import { useAppSelector, useAppDispatch } from "@/typedhooks/hooks";
 
 const Index = () => {
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(fetchDataFromApi());
+  }, []);
+
   return (
     <>
       <BannerSlider bannerData={home1_bannerData} />

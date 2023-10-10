@@ -3,7 +3,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
-const ProductImage = () => {
+const ProductImage = ({ specificProduct }: any) => {
   return (
     <>
       <Swiper
@@ -12,16 +12,16 @@ const ProductImage = () => {
         className="product-img-slider"
       >
         <SwiperSlide>
-          <img src="/images/product-details/1.jpg" className="w-100" />
+          <img src={specificProduct?.img} className="w-100" />
         </SwiperSlide>
 
-        <SwiperSlide>
+        {/* <SwiperSlide>
           <img src="/images/product-details/2.jpg" className="w-100" />
         </SwiperSlide>
 
         <SwiperSlide>
           <img src="/images/product-details/3.jpg" className="w-100" />
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
     </>
   );

@@ -5,7 +5,13 @@ const LatestProducts = ({ latestData }: any) => {
   return (
     <>
       <div className="row">
-        <ProductCard data={latestData} />
+        {latestData.map((product: any) => (
+          <>
+            <div key={product.id} className="col-lg-4 col-md-6 col-sm-6">
+              <ProductCard product={product} />
+            </div>
+          </>
+        ))}
       </div>
     </>
   );

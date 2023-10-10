@@ -4465,7 +4465,7 @@ Woocommerce Sidebar Area CSS
           left: 10px;
           top: 10px;
         }
-        a {
+        span {
           font-size: 12px;
           display: inline-block;
           border: 1px solid #eeeeee;
@@ -4493,7 +4493,7 @@ Woocommerce Sidebar Area CSS
           }
         }
         &.active {
-          a {
+          span {
             border-color: $black-color;
             color: $black-color;
           }
@@ -4504,7 +4504,7 @@ Woocommerce Sidebar Area CSS
       margin-top: 12px;
       cursor: pointer;
 
-      a {
+      span {
         color: $paragraph-color;
 
         i {
@@ -4535,8 +4535,9 @@ Woocommerce Sidebar Area CSS
     li {
       margin-bottom: 12px;
 
-      a {
+      span {
         color: #858585;
+        cursor: pointer;
 
         &:hover,
         &:focus {
@@ -4544,7 +4545,7 @@ Woocommerce Sidebar Area CSS
         }
       }
       &.active {
-        a {
+        span {
           color: $black-color;
         }
       }
@@ -4563,8 +4564,9 @@ Woocommerce Sidebar Area CSS
     li {
       margin-bottom: 12px;
 
-      a {
+      span {
         color: #858585;
+        cursor: pointer;
 
         &:hover,
         &:focus {
@@ -4572,7 +4574,7 @@ Woocommerce Sidebar Area CSS
         }
       }
       &.active {
-        a {
+        span {
           color: $black-color;
         }
       }
@@ -4598,7 +4600,7 @@ Woocommerce Sidebar Area CSS
         left: 10px;
         top: 10px;
       }
-      a {
+      span {
         width: 35px;
         height: 35px;
         display: inline-block;
@@ -4606,6 +4608,7 @@ Woocommerce Sidebar Area CSS
         border: 1px solid #eeeeee;
         color: #858585;
         text-align: center;
+        cursor: pointer;
 
         &:hover,
         &:focus {
@@ -4614,7 +4617,7 @@ Woocommerce Sidebar Area CSS
         }
       }
       &.active {
-        a {
+        span {
           border-color: $black-color;
           color: $black-color;
         }
@@ -4631,8 +4634,9 @@ Woocommerce Sidebar Area CSS
     li {
       margin-bottom: 10px;
 
-      a {
+      span {
         color: #858585;
+        cursor: pointer;
 
         &:hover,
         &:focus {
@@ -4640,7 +4644,7 @@ Woocommerce Sidebar Area CSS
         }
       }
       &.active {
-        a {
+        span {
           color: $black-color;
         }
       }
@@ -4666,12 +4670,12 @@ Woocommerce Sidebar Area CSS
         left: 4px;
         top: 4px;
       }
-      a {
+      span {
         display: inline-block;
         position: relative;
         border: 1px solid transparent;
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
         border-radius: 50%;
 
         &::before {
@@ -4681,7 +4685,6 @@ Woocommerce Sidebar Area CSS
           right: 0;
           top: 0;
           bottom: 0;
-          background: #eeeeee;
           border-radius: 50%;
           margin: 2px;
           transition: $transition;
@@ -4690,75 +4693,9 @@ Woocommerce Sidebar Area CSS
         &:focus {
           border-color: $black-color;
         }
-        &.color-white {
-          &::before {
-            background: $white-color;
-            border: 1px solid #eeeeee;
-          }
-        }
-        &.color-black {
-          &::before {
-            background: $black-color;
-          }
-        }
-        &.color-red {
-          &::before {
-            background: red;
-          }
-        }
-        &.color-blue {
-          &::before {
-            background: blue;
-          }
-        }
-        &.color-green {
-          &::before {
-            background: green;
-          }
-        }
-        &.color-yellow {
-          &::before {
-            background: yellow;
-          }
-        }
-        &.color-yellowgreen {
-          &::before {
-            background: yellowgreen;
-          }
-        }
-        &.color-pink {
-          &::before {
-            background: pink;
-          }
-        }
-        &.color-violet {
-          &::before {
-            background: violet;
-          }
-        }
-        &.color-teal {
-          &::before {
-            background: teal;
-          }
-        }
-        &.color-plum {
-          &::before {
-            background: plum;
-          }
-        }
-        &.color-lime {
-          &::before {
-            background: lime;
-          }
-        }
-        &.color-blueviolet {
-          &::before {
-            background: blueviolet;
-          }
-        }
       }
       &.active {
-        a {
+        span {
           border-color: $black-color;
         }
       }
@@ -4781,12 +4718,13 @@ Woocommerce Sidebar Area CSS
         left: 10px;
         top: 10px;
       }
-      a {
+      span {
         display: inline-block;
         border: 1px solid #eeeeee;
         padding: 5px 15px;
         color: #858585;
         text-align: center;
+        cursor: pointer;
 
         &:hover,
         &:focus {
@@ -4795,7 +4733,7 @@ Woocommerce Sidebar Area CSS
         }
       }
       &.active {
-        a {
+        span {
           border-color: $black-color;
           color: $black-color;
         }
@@ -9538,6 +9476,44 @@ News Area CSS
           color: $black-color;
         }
       }
+    }
+  }
+}
+/*================================================
+Success page CSS
+=================================================*/
+.succes-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  min-height: 50vh;
+  gap: 2rem;
+  .success-content {
+    max-width: 70%;
+    .h1 {
+      font-size: 25px;
+    }
+  }
+  .success-btn {
+    display: flex;
+    gap: 2rem;
+  }
+}
+
+.order-address {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  .order-box {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    .h6 {
+      font-size: 15px;
+      font-weight: 600;
     }
   }
 }

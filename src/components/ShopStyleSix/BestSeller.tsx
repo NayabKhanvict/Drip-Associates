@@ -12,9 +12,14 @@ const BestSeller = ({ data }: any) => {
               <span className="dot"></span> Best Sellers
             </h2>
           </div>
-
           <div className="row">
-            <ProductCard data={bestSellersproduct} />
+            {bestSellersproduct.map((product: any) => (
+              <>
+                <div key={product.id} className="col-lg-4 col-md-6 col-sm-6">
+                  <ProductCard product={product} />
+                </div>
+              </>
+            ))}
           </div>
         </div>
       </div>

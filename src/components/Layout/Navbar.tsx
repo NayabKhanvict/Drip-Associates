@@ -1,19 +1,46 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TopPanel from "./TopPanel";
 import TopHeader from "./TopHeader";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import image from "../../../public/images/logo.png";
+import { useAppDispatch, useAppSelector } from "@/typedhooks/hooks";
+import { signOut } from "next-auth/react";
+import { useSession } from "next-auth/react";
+import { deleteCookie } from "cookies-next";
+
+import {
+  manAccessories,
+  manClothes,
+  manShoes,
+  todayDealAccessories,
+  todayDealClothes,
+  todayDealShoes,
+  womanAccessories,
+  womanClothes,
+  womanShoes,
+} from "@/constant/navbar";
+import FormattedPrice from "../FormattedPrice/FormattedPrice";
+import { getCartTotal } from "@/redux/slices/cartSlice";
+import { data } from "@/constant/data";
 const Navbar = () => {
+  const dispatch = useAppDispatch();
+  const { cartData: products, totalAmount } = useAppSelector(
+    (state) => state?.cart
+  );
   const currentRoute = usePathname();
   const [menu, setMenu] = React.useState(true);
   const toggleNavbar = () => {
     setMenu(!menu);
   };
-
+  const { data: session } = useSession();
+  console.log(session?.user);
+  useEffect(() => {
+    dispatch(getCartTotal());
+  }, [useAppSelector((state) => state?.cart)]);
   React.useEffect(() => {
     let elementId = document.getElementById("navbar");
     if (elementId) {
@@ -559,109 +586,20 @@ const Navbar = () => {
                               <h6 className="submenu-title">Clothing</h6>
 
                               <ul className="megamenu-submenu">
-                                <li>
-                                  <Link
-                                    href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Coats
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/full-width/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/full-width/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Jackets
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Blazers
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Dresses
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Trousers
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Jeans
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Sweatshirts
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/full-width/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/full-width/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    T-Shirts
-                                  </Link>
-                                </li>
+                                {womanClothes.map((item) => (
+                                  <li>
+                                    <Link
+                                      href="/products/three-grid/"
+                                      className={`nav-link ${
+                                        currentRoute === "/products/three-grid/"
+                                          ? "active"
+                                          : "non-active"
+                                      }`}
+                                    >
+                                      {item}
+                                    </Link>
+                                  </li>
+                                ))}
                               </ul>
                             </div>
 
@@ -669,74 +607,20 @@ const Navbar = () => {
                               <h6 className="submenu-title">Shoes</h6>
 
                               <ul className="megamenu-submenu">
-                                <li>
-                                  <Link
-                                    href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Trainers
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Boots
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Heels
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Flats
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Heeled Sandals
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link href="/products">Platforms</Link>
-                                </li>
+                                {womanShoes.map((item) => (
+                                  <li>
+                                    <Link
+                                      href="/products/three-grid/"
+                                      className={`nav-link ${
+                                        currentRoute === "/products/three-grid/"
+                                          ? "active"
+                                          : "non-active"
+                                      }`}
+                                    >
+                                      {item}
+                                    </Link>
+                                  </li>
+                                ))}
                               </ul>
                             </div>
 
@@ -744,87 +628,20 @@ const Navbar = () => {
                               <h6 className="submenu-title">Accessories</h6>
 
                               <ul className="megamenu-submenu">
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Bags
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Glasses
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Jewellery
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link href="/products">iPhone Cases</Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/full-width/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/full-width/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Gadgets
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/full-width/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/full-width/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Hats & Beanie
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Purses
-                                  </Link>
-                                </li>
+                                {womanAccessories.map((item) => (
+                                  <li>
+                                    <Link
+                                      href="/products/"
+                                      className={`nav-link ${
+                                        currentRoute === "/products/"
+                                          ? "active"
+                                          : "non-active"
+                                      }`}
+                                    >
+                                      {item}
+                                    </Link>
+                                  </li>
+                                ))}
                               </ul>
                             </div>
 
@@ -880,98 +697,21 @@ const Navbar = () => {
                           <div className="row">
                             <div className="col">
                               <h6 className="submenu-title">Clothing</h6>
-
                               <ul className="megamenu-submenu">
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Coats
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Jackets
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Jeans
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    T-Shirts
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/full-width/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/full-width/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Sweatshirts
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Knitwear
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/full-width/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/full-width/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Shirts
-                                  </Link>
-                                </li>
+                                {manClothes.map((item) => (
+                                  <li>
+                                    <Link
+                                      href="/products/three-grid/"
+                                      className={`nav-link ${
+                                        currentRoute === "/products/three-grid/"
+                                          ? "active"
+                                          : "non-active"
+                                      }`}
+                                    >
+                                      {item}
+                                    </Link>
+                                  </li>
+                                ))}
                               </ul>
                             </div>
 
@@ -979,109 +719,20 @@ const Navbar = () => {
                               <h6 className="submenu-title">Shoes</h6>
 
                               <ul className="megamenu-submenu">
-                                <li>
-                                  <Link
-                                    href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Trainers
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/full-width/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/full-width/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Boots
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Heels
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Flats
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Heeled Sandals
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Sandals
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Platforms
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Heeled Sandals
-                                  </Link>
-                                </li>
+                                {manShoes.map((item) => (
+                                  <li>
+                                    <Link
+                                      href="/products/three-grid/"
+                                      className={`nav-link ${
+                                        currentRoute === "/products/three-grid/"
+                                          ? "active"
+                                          : "non-active"
+                                      }`}
+                                    >
+                                      {item}
+                                    </Link>
+                                  </li>
+                                ))}
                               </ul>
                             </div>
 
@@ -1089,96 +740,20 @@ const Navbar = () => {
                               <h6 className="submenu-title">Accessories</h6>
 
                               <ul className="megamenu-submenu">
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Bags
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Backpacks
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Glasses
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Earrings
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/full-width/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/full-width/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    iPhone Cases
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Mobile Accessories
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Socks
-                                  </Link>
-                                </li>
+                                {manAccessories.map((item) => (
+                                  <li>
+                                    <Link
+                                      href="/products/three-grid/"
+                                      className={`nav-link ${
+                                        currentRoute === "/products/three-grid/"
+                                          ? "active"
+                                          : "non-active"
+                                      }`}
+                                    >
+                                      {item}
+                                    </Link>
+                                  </li>
+                                ))}
                               </ul>
                             </div>
 
@@ -1234,96 +809,20 @@ const Navbar = () => {
                               <h6 className="submenu-title">Clothing</h6>
 
                               <ul className="megamenu-submenu">
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Coats
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Jackets
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Jeans
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    T-Shirts
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/full-width/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/full-width/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Sweatshirts
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Knitwear
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/full-width/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/full-width/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Shirts
-                                  </Link>
-                                </li>
+                                {todayDealClothes.map((item) => (
+                                  <li>
+                                    <Link
+                                      href="/products/three-grid/"
+                                      className={`nav-link ${
+                                        currentRoute === "/products/three-grid/"
+                                          ? "active"
+                                          : "non-active"
+                                      }`}
+                                    >
+                                      {item}
+                                    </Link>
+                                  </li>
+                                ))}
                               </ul>
                             </div>
 
@@ -1331,109 +830,20 @@ const Navbar = () => {
                               <h6 className="submenu-title">Shoes</h6>
 
                               <ul className="megamenu-submenu">
-                                <li>
-                                  <Link
-                                    href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Trainers
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/full-width/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/full-width/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Boots
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Heels
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Flats
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Heeled Sandals
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Sandals
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Platforms
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Heeled Sandals
-                                  </Link>
-                                </li>
+                                {todayDealShoes.map((item) => (
+                                  <li>
+                                    <Link
+                                      href="/products/three-grid/"
+                                      className={`nav-link ${
+                                        currentRoute === "/products/three-grid/"
+                                          ? "active"
+                                          : "non-active"
+                                      }`}
+                                    >
+                                      {item}
+                                    </Link>
+                                  </li>
+                                ))}
                               </ul>
                             </div>
 
@@ -1441,96 +851,20 @@ const Navbar = () => {
                               <h6 className="submenu-title">Accessories</h6>
 
                               <ul className="megamenu-submenu">
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Bags
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Backpacks
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Glasses
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Earrings
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/full-width/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/full-width/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    iPhone Cases
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Mobile Accessories
-                                  </Link>
-                                </li>
-
-                                <li>
-                                  <Link
-                                    href="/products/three-grid/"
-                                    className={`nav-link ${
-                                      currentRoute === "/products/three-grid/"
-                                        ? "active"
-                                        : "non-active"
-                                    }`}
-                                  >
-                                    Socks
-                                  </Link>
-                                </li>
+                                {todayDealAccessories.map((item) => (
+                                  <li>
+                                    <Link
+                                      href="/products/three-grid/"
+                                      className={`nav-link ${
+                                        currentRoute === "/products/three-grid/"
+                                          ? "active"
+                                          : "non-active"
+                                      }`}
+                                    >
+                                      {item}
+                                    </Link>
+                                  </li>
+                                ))}
                               </ul>
                             </div>
 
@@ -1689,6 +1023,18 @@ const Navbar = () => {
                           }`}
                         >
                           Checkout
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link
+                          href="/myorder/"
+                          className={`nav-link ${
+                            currentRoute === "/myorder/"
+                              ? "active"
+                              : "non-active"
+                          }`}
+                        >
+                          My Order
                         </Link>
                       </li>
 
@@ -1869,9 +1215,22 @@ const Navbar = () => {
                     style={{ cursor: "pointer" }}
                   ></i>
                 </div>
+                {session?.user?.name}
 
                 <div className="option-item">
-                  <Link href="/login">Login</Link>
+                  {session ? (
+                    <Link
+                      href="#"
+                      onClick={() => {
+                        signOut();
+                        deleteCookie("logged");
+                      }}
+                    >
+                      Logout
+                    </Link>
+                  ) : (
+                    <Link href="/login">Login</Link>
+                  )}
                 </div>
 
                 <div className="option-item">
@@ -1882,7 +1241,8 @@ const Navbar = () => {
                       handleToggleCartModal();
                     }}
                   >
-                    Cart(3) <i className="fas fa-shopping-bag"></i>
+                    Cart({products?.length}){" "}
+                    <i className="fas fa-shopping-bag"></i>
                   </Link>
                 </div>
               </div>
@@ -1948,77 +1308,61 @@ const Navbar = () => {
             </button>
 
             <div className="modal-body">
-              <h3>MY CART (3)</h3>
+              {products?.length > 0 ? (
+                <>
+                  {" "}
+                  <h3>MY CART ({products?.length})</h3>
+                  <div className="product-cart-content">
+                    {products?.map((product: any) => (
+                      <div className="product-cart">
+                        <div className="product-image">
+                          <img src={product?.img} alt="image" />
+                        </div>
 
-              <div className="product-cart-content">
-                <div className="product-cart">
-                  <div className="product-image">
-                    <img src="/images/img2.jpg" alt="image" />
+                        <div className="product-content">
+                          <h3>
+                            <Link href="#">{product?.title}</Link>
+                          </h3>
+                          <span>Blue / XS</span>
+                          <div className="product-price">
+                            <span>{product?.quantity}</span>
+                            <span>x</span>
+                            <span className="price">
+                              <FormattedPrice amount={product?.price} />
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-
-                  <div className="product-content">
-                    <h3>
-                      <Link href="#">Belted chino trousers polo</Link>
-                    </h3>
-                    <span>Blue / XS</span>
-                    <div className="product-price">
-                      <span>1</span>
-                      <span>x</span>
-                      <span className="price">$191.00</span>
-                    </div>
+                  <div className="product-cart-subtotal">
+                    <span>Subtotal</span>
+                    <span className="subtotal">
+                      <FormattedPrice amount={totalAmount} />
+                    </span>
                   </div>
+                  <div className="product-cart-btn">
+                    <Link href="/checkout" className="btn btn-primary">
+                      Proceed to Checkout
+                    </Link>
+                    <Link href="/cart" className="btn btn-light">
+                      View Shopping Cart
+                    </Link>
+                  </div>
+                </>
+              ) : (
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    marginTop: "20%",
+                  }}
+                >
+                  <h1 style={{ fontSize: "20px", fontWeight: "400" }}>
+                    NO Product Is Present Yet!
+                  </h1>
                 </div>
-
-                <div className="product-cart">
-                  <div className="product-image">
-                    <img src="/images/img3.jpg" alt="image" />
-                  </div>
-
-                  <div className="product-content">
-                    <h3>
-                      <Link href="#">Belted chino trousers polo</Link>
-                    </h3>
-                    <span>Blue / XS</span>
-                    <div className="product-price">
-                      <span>1</span>
-                      <span>x</span>
-                      <span className="price">$191.00</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="product-cart">
-                  <div className="product-image">
-                    <img src="/images/img4.jpg" alt="image" />
-                  </div>
-
-                  <div className="product-content">
-                    <h3>
-                      <Link href="#">Belted chino trousers polo</Link>
-                    </h3>
-                    <span>Blue / XS</span>
-                    <div className="product-price">
-                      <span>1</span>
-                      <span>x</span>
-                      <span className="price">$191.00</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="product-cart-subtotal">
-                <span>Subtotal</span>
-                <span className="subtotal">$500.00</span>
-              </div>
-
-              <div className="product-cart-btn">
-                <Link href="#" className="btn btn-primary">
-                  Proceed to Checkout
-                </Link>
-                <Link href="#" className="btn btn-light">
-                  View Shopping Cart
-                </Link>
-              </div>
+              )}
             </div>
           </div>
         </div>
@@ -2026,6 +1370,7 @@ const Navbar = () => {
           clone
         </span>
       </div>
+
       {/* End Cart Modal */}
     </>
   );

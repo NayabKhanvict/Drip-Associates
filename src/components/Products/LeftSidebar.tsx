@@ -8,8 +8,40 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from "react-accessible-accordion";
+import {
+  Brand,
+  Color,
+  PopulerTag,
+  Price,
+  Size,
+  collection,
+} from "@/constant/productFilter";
 
-const LeftSidebar = () => {
+const LeftSidebar = ({ filters, setFilters }: any) => {
+  const handleFilter = (value: any, filterType: any) => {
+    setFilters((prevFilters: any) => ({
+      ...prevFilters,
+      [filterType]: value,
+    }));
+  };
+  const handleClear = (property: any) => {
+    if (filters.hasOwnProperty(property)) {
+      setFilters((prevFilters: any) => ({
+        ...prevFilters,
+        [property]: "",
+      }));
+    }
+  };
+  const clearAllFilters = (e: any) => {
+    setFilters({
+      brand: "",
+      color: "",
+      price: "",
+      collections: "",
+      size: "",
+      tags: "",
+    });
+  };
   return (
     <>
       <div className="woocommerce-sidebar-area">
@@ -21,27 +53,24 @@ const LeftSidebar = () => {
             <AccordionItemPanel>
               <div className="selected-filters-wrap-list">
                 <ul>
-                  <li>
-                    <Link href="#">44</Link>
-                  </li>
-                  <li>
-                    <Link href="#">XI</Link>
-                  </li>
-                  <li>
-                    <Link href="#">Clothing</Link>
-                  </li>
-                  <li>
-                    <Link href="#">Shoes</Link>
-                  </li>
-                  <li>
-                    <Link href="#">Accessories</Link>
-                  </li>
+                  {Object.entries(filters).map(([key, value]) => {
+                    if (value !== "" && value !== null && value !== undefined) {
+                      return (
+                        <li>
+                          <span onClick={() => handleClear(key)}>
+                            {String(value)}
+                          </span>
+                        </li>
+                      );
+                    }
+                    return null;
+                  })}
                 </ul>
 
                 <div className="delete-selected-filters">
-                  <Link href="#">
+                  <span onClick={clearAllFilters}>
                     <i className="far fa-trash-alt"></i> <span>Clear All</span>
-                  </Link>
+                  </span>
                 </div>
               </div>
             </AccordionItemPanel>
@@ -53,24 +82,14 @@ const LeftSidebar = () => {
             </AccordionItemHeading>
             <AccordionItemPanel>
               <ul className="collections-list-row">
-                <li className="active">
-                  <Link href="#">Women’s</Link>
-                </li>
-                <li>
-                  <Link href="#">Men</Link>
-                </li>
-                <li>
-                  <Link href="#">Clothing</Link>
-                </li>
-                <li>
-                  <Link href="#">Shoes</Link>
-                </li>
-                <li>
-                  <Link href="#">Accessories</Link>
-                </li>
-                <li>
-                  <Link href="#">Uncategorized</Link>
-                </li>
+                {collection.map((item) => (
+                  <li
+                    key={item}
+                    onClick={() => handleFilter(item, "collections")}
+                  >
+                    <span>{item}</span>
+                  </li>
+                ))}
               </ul>
             </AccordionItemPanel>
           </AccordionItem>
@@ -81,24 +100,11 @@ const LeftSidebar = () => {
             </AccordionItemHeading>
             <AccordionItemPanel>
               <ul className="brands-list-row">
-                <li className="active">
-                  <Link href="#">Adidas</Link>
-                </li>
-                <li>
-                  <Link href="#">Nike</Link>
-                </li>
-                <li>
-                  <Link href="#">Reebok</Link>
-                </li>
-                <li>
-                  <Link href="#">Shoes</Link>
-                </li>
-                <li>
-                  <Link href="#">Ralph Lauren</Link>
-                </li>
-                <li>
-                  <Link href="#">Delpozo</Link>
-                </li>
+                {Brand.map((item) => (
+                  <li key={item} onClick={() => handleFilter(item, "brand")}>
+                    <span>{item}</span>
+                  </li>
+                ))}
               </ul>
             </AccordionItemPanel>
           </AccordionItem>
@@ -109,36 +115,11 @@ const LeftSidebar = () => {
             </AccordionItemHeading>
             <AccordionItemPanel>
               <ul className="size-list-row">
-                <li>
-                  <Link href="#">20</Link>
-                </li>
-                <li>
-                  <Link href="#">24</Link>
-                </li>
-                <li>
-                  <Link href="#">36</Link>
-                </li>
-                <li>
-                  <Link href="#">30</Link>
-                </li>
-                <li className="active">
-                  <Link href="#">XS</Link>
-                </li>
-                <li>
-                  <Link href="#">S</Link>
-                </li>
-                <li>
-                  <Link href="#">M</Link>
-                </li>
-                <li>
-                  <Link href="#">L</Link>
-                </li>
-                <li>
-                  <Link href="#">L</Link>
-                </li>
-                <li>
-                  <Link href="#">XL</Link>
-                </li>
+                {Size.map((item) => (
+                  <li key={item} onClick={() => handleFilter(item, "size")}>
+                    <span>{item}</span>
+                  </li>
+                ))}
               </ul>
             </AccordionItemPanel>
           </AccordionItem>
@@ -149,24 +130,11 @@ const LeftSidebar = () => {
             </AccordionItemHeading>
             <AccordionItemPanel>
               <ul className="price-list-row">
-                <li>
-                  <Link href="#">$10 - $100</Link>
-                </li>
-                <li className="active">
-                  <Link href="#">$100 - $200</Link>
-                </li>
-                <li>
-                  <Link href="#">$200 - $300</Link>
-                </li>
-                <li>
-                  <Link href="#">$300 - $400</Link>
-                </li>
-                <li>
-                  <Link href="#">$400 - $500</Link>
-                </li>
-                <li>
-                  <Link href="#">$500 - $600</Link>
-                </li>
+                {Price.map((item) => (
+                  <li key={item} onClick={() => handleFilter(item, "price")}>
+                    <span>{item}</span>
+                  </li>
+                ))}
               </ul>
             </AccordionItemPanel>
           </AccordionItem>
@@ -177,53 +145,11 @@ const LeftSidebar = () => {
             </AccordionItemHeading>
             <AccordionItemPanel>
               <ul className="color-list-row">
-                <li>
-                  <Link href="#" title="Black" className="color-black"></Link>
-                </li>
-                <li>
-                  <Link href="#" title="Red" className="color-red"></Link>
-                </li>
-                <li>
-                  <Link href="#" title="Yellow" className="color-yellow"></Link>
-                </li>
-                <li>
-                  <Link href="#" title="White" className="color-white"></Link>
-                </li>
-                <li>
-                  <Link href="#" title="Blue" className="color-blue"></Link>
-                </li>
-                <li>
-                  <Link href="#" title="Green" className="color-green"></Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    title="Yellow Green"
-                    className="color-yellowgreen"
-                  ></Link>
-                </li>
-                <li>
-                  <Link href="#" title="Pink" className="color-pink"></Link>
-                </li>
-                <li>
-                  <Link href="#" title="Violet" className="color-violet"></Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    title="Blue Violet"
-                    className="color-blueviolet"
-                  ></Link>
-                </li>
-                <li>
-                  <Link href="#" title="Lime" className="color-lime"></Link>
-                </li>
-                <li>
-                  <Link href="#" title="Plum" className="color-plum"></Link>
-                </li>
-                <li>
-                  <Link href="#" title="Teal" className="color-teal"></Link>
-                </li>
+                {Color.map((item) => (
+                  <li key={item} onClick={() => handleFilter(item, "color")}>
+                    <span style={{ background: `${item}` }}></span>
+                  </li>
+                ))}
               </ul>
             </AccordionItemPanel>
           </AccordionItem>
@@ -234,27 +160,11 @@ const LeftSidebar = () => {
             </AccordionItemHeading>
             <AccordionItemPanel>
               <ul className="tags-list-row">
-                <li>
-                  <Link href="#">Vintage</Link>
-                </li>
-                <li>
-                  <Link href="#">Black</Link>
-                </li>
-                <li className="active">
-                  <Link href="#">Discount</Link>
-                </li>
-                <li>
-                  <Link href="#">Good</Link>
-                </li>
-                <li>
-                  <Link href="#">Jeans</Link>
-                </li>
-                <li>
-                  <Link href="#">Summer</Link>
-                </li>
-                <li>
-                  <Link href="#">Winter</Link>
-                </li>
+                {PopulerTag.map((item) => (
+                  <li key={item} onClick={() => handleFilter(item, "tags")}>
+                    <span>{item}</span>
+                  </li>
+                ))}
               </ul>
             </AccordionItemPanel>
           </AccordionItem>

@@ -1,65 +1,130 @@
 "use client";
+import { addToCart } from "@/redux/slices/cartSlice";
+import { useAppDispatch, useAppSelector } from "@/typedhooks/hooks";
 import Link from "next/link";
 import React, { useState } from "react";
+import FormattedPrice from "../FormattedPrice/FormattedPrice";
+import { toast } from "react-toastify";
+import StarRating from "../Common/StarRating";
 
-const ProductCard = ({ data }: any) => {
+const ProductCard = ({ product }: any) => {
+  const dispatch = useAppDispatch();
   const [isActiveQuickViewModal, setActiveQuickViewModal] =
     useState<boolean>(true);
   const handleToggleQuickViewModal = () => {
     setActiveQuickViewModal(!isActiveQuickViewModal);
   };
+  const [qty, setQty] = useState(1);
+  const products = useAppSelector(
+    (state) => state?.data?.data?.product?.products
+  );
+  const specificProduct = products?.find(
+    (item: any) => item?.id === product?.id
+  );
+  const increaseQty = () => {
+    setQty((prevQty) => {
+      let newQty = prevQty + 1;
+      return newQty;
+    });
+  };
+
+  const decreaseQty = () => {
+    setQty((prevQty) => {
+      let newQty = prevQty - 1;
+      if (newQty < 1) {
+        newQty = 1;
+      }
+      return newQty;
+    });
+  };
+
+  const addToCartHandler = (product: any) => {
+    let totalPrice = qty * product.price;
+    const tempProduct = {
+      ...product,
+      quantity: qty,
+      totalPrice,
+    };
+    dispatch(addToCart(tempProduct));
+  };
+  const cardCartHandler = (product: any) => {
+    let totalPrice = product?.price;
+    let quantity = 1;
+    const tempProduct = {
+      ...product,
+      quantity,
+      totalPrice,
+    };
+    dispatch(addToCart(tempProduct));
+  };
   return (
     <>
-      {data.map((data: any) => (
-        <div className="col-lg-4 col-md-6 col-sm-6">
-          <div className="product-box">
-            <div className="product-image">
-              <Link href={`/products/${data.id}`}>
-                <img src={data.img} alt="image" />
-              </Link>
+      <div className="product-box">
+        <div className="product-image">
+          <Link href={`/products/${product?.id}`}>
+            <img src={product?.img} alt="image" />
+          </Link>
 
-              <ul>
-                <li>
-                  <button
-                    type="button"
-                    title="Quick View"
-                    onClick={handleToggleQuickViewModal}
-                  >
-                    <i className="far fa-eye"></i>
-                  </button>
-                </li>
-                <li>
-                  <button type="button" title="Add to Wishlist">
-                    <i className="far fa-heart"></i>
-                  </button>
-                </li>
-              </ul>
-            </div>
+          <ul>
+            <li>
+              <button
+                type="button"
+                title="Quick View"
+                onClick={handleToggleQuickViewModal}
+              >
+                <i className="far fa-eye"></i>
+              </button>
+            </li>
+            <li>
+              <button type="button" title="Add to Wishlist">
+                <i className="far fa-heart"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
 
-            <div className="product-content">
-              <h3>{data.title}</h3>
+        <div className="product-content">
+          <h3>{product?.title}</h3>
 
-              <div className="product-price">
-                <span className="new-price">$191.00</span>
-              </div>
+          <div className="product-price">
+            <span className="new-price">
+              <FormattedPrice amount={product?.price} />
+            </span>
+          </div>
 
-              <div className="rating">
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="far fa-star"></i>
-              </div>
+          <div className="rating">
+            <StarRating rating={product?.rating} />
+            {/* <i className="fas fa-star"></i>
+            <i className="fas fa-star"></i>
+            <i className="fas fa-star"></i>
+            <i className="fas fa-star"></i>
+            <i className="far fa-star"></i> */}
+          </div>
 
-              <div className="px-5">
-                <button className="btn btn-light d-block w-100">
-                  Add to Cart
-                </button>
-              </div>
-            </div>
+          <div className="px-5">
+            <button
+              className="btn btn-light d-block w-100"
+              //  onClick={() => {
+              //                         dispatch(
+              //                           toggleCartQty({
+              //                             id: product?.id,
+              //                             type: "INC",
+              //                           })
+              //                         );
+              //                       }}
+              onClick={() => {
+                cardCartHandler(product);
+                toast.success("Product added successfully!", {
+                  position: "top-right",
+                  autoClose: 3000,
+                });
+              }}
+            >
+              Add to Cart
+            </button>
           </div>
         </div>
-      ))}
+      </div>
       <div
         className={`modal fade productQuickView ${
           isActiveQuickViewModal ? "" : "show"
@@ -70,7 +135,7 @@ const ProductCard = ({ data }: any) => {
             <button
               type="button"
               className="close"
-              data-dismiss="modal"
+              product-dismiss="modal"
               aria-label="Close"
               onClick={handleToggleQuickViewModal}
             >
@@ -82,7 +147,7 @@ const ProductCard = ({ data }: any) => {
             <div className="row align-items-center">
               <div className="col-lg-6 col-md-6">
                 <div className="productQuickView-image">
-                  <img src="/images/quick-view-img.jpg" alt="image" />
+                  <img src={specificProduct?.img} alt="image" />
                 </div>
               </div>
 
@@ -90,12 +155,13 @@ const ProductCard = ({ data }: any) => {
                 <div className="product-content">
                   <h3>
                     <Link href="/products/product-details/">
-                      Criss-cross V neck bodycon
+                      {specificProduct?.title}
                     </Link>
                   </h3>
-
                   <div className="price">
-                    <span className="new-price">$230</span>
+                    <span className="new-price">
+                      <FormattedPrice amount={specificProduct?.price} />
+                    </span>
                   </div>
 
                   <div className="product-review">
@@ -116,11 +182,12 @@ const ProductCard = ({ data }: any) => {
                       <span>Vendor:</span> <Link href="#">Lereve</Link>
                     </li>
                     <li>
-                      <span>Availability:</span>{" "}
-                      <Link href="#">In stock (7 items)</Link>
+                      <span>Availability: </span>{" "}
+                      <Link href="#">In stock ({specificProduct?.stock})</Link>
                     </li>
                     <li>
-                      <span>Product Type:</span> <Link href="#">T-Shirt</Link>
+                      <span>Product Type:</span>{" "}
+                      <Link href="#">{specificProduct?.type}</Link>
                     </li>
                   </ul>
 
@@ -168,40 +235,49 @@ const ProductCard = ({ data }: any) => {
                   <div className="product-size-wrapper">
                     <h4>Size:</h4>
                     <ul>
-                      <li>
-                        <Link href="#">XS</Link>
-                      </li>
-                      <li className="active">
-                        <Link href="#">S</Link>
-                      </li>
-                      <li>
-                        <Link href="#">M</Link>
-                      </li>
-                      <li>
-                        <Link href="#">XL</Link>
-                      </li>
-                      <li>
-                        <Link href="#">XXL</Link>
-                      </li>
+                      {specificProduct?.size.map((item: string[]) => (
+                        <li>
+                          <Link href="#">{item}</Link>
+                        </li>
+                      ))}
                     </ul>
                   </div>
 
                   <div className="product-add-to-cart">
                     <div className="input-counter">
                       <span className="minus-btn">
-                        <i className="fas fa-minus"></i>
+                        <i
+                          className="fas fa-minus"
+                          onClick={() => decreaseQty()}
+                        ></i>
                       </span>
-                      <input type="text" min="1" max="10" defaultValue="1" />
+                      <input type="text" value={qty} />
                       <span className="plus-btn">
-                        <i className="fas fa-plus"></i>
+                        <i
+                          className="fas fa-plus"
+                          onClick={() => increaseQty()}
+                        ></i>
                       </span>
                     </div>
-                    <button type="submit" className="btn btn-primary">
+                    <button
+                      type="submit"
+                      className="btn btn-primary"
+                      onClick={() => {
+                        addToCartHandler(specificProduct);
+                        toast.success("Product added successfully!", {
+                          position: "top-right",
+                          autoClose: 3000,
+                        });
+                      }}
+                    >
                       <i className="fas fa-cart-plus"></i> Add to Cart
                     </button>
                   </div>
 
-                  <Link className="view-full-info" href="#">
+                  <Link
+                    className="view-full-info"
+                    href={`/products/${product?.id}`}
+                  >
                     View full info
                   </Link>
                 </div>

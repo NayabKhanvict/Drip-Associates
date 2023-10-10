@@ -1,14 +1,50 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Link from "next/link";
+import { addToCart } from "@/redux/slices/cartSlice";
+import { useAppDispatch } from "@/typedhooks/hooks";
+import FormattedPrice from "../FormattedPrice/FormattedPrice";
+import { toast } from "react-toastify";
 
-const ProductContent = () => {
+const ProductContent = ({ specificProduct }: any) => {
+  const dispatch = useAppDispatch();
+  const [qty, setQty] = useState(1);
+  const increaseQty = () => {
+    setQty((prevQty) => {
+      let newQty = prevQty + 1;
+      return newQty;
+    });
+  };
+
+  const decreaseQty = () => {
+    setQty((prevQty) => {
+      let newQty = prevQty - 1;
+      if (newQty < 1) {
+        newQty = 1;
+      }
+      return newQty;
+    });
+  };
+
+  const addToCartHandler = (product: any) => {
+    let totalPrice = qty * product.price;
+    const tempProduct = {
+      ...product,
+      quantity: qty,
+      totalPrice,
+    };
+    dispatch(addToCart(tempProduct));
+  };
+
   return (
     <>
       <div className="product-details-content">
-        <h3>Belted chino trousers polo</h3>
+        <h3>{specificProduct?.title}</h3>
 
         <div className="price">
-          <span className="new-price">$191.00</span>
+          <span className="new-price">
+            <FormattedPrice amount={specificProduct?.price} />
+          </span>
         </div>
 
         <div className="product-review">
@@ -24,21 +60,19 @@ const ProductContent = () => {
           </Link>
         </div>
 
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et.
-        </p>
+        <p>{specificProduct?.description}</p>
 
         <ul className="product-info">
           <li>
             <span>Vendor:</span> <Link href="#">Lereve</Link>
           </li>
           <li>
-            <span>Availability:</span>{" "}
-            <Link href="#">In stock (7 items)</Link>
+            <span>Availability: </span>
+            <Link href="#">In stock ({specificProduct?.stock})</Link>
           </li>
           <li>
-            <span>Product Type:</span> <Link href="#">T-Shirt</Link>
+            <span>Product Type: </span>
+            <Link href="#">{specificProduct?.type}</Link>
           </li>
         </ul>
 
@@ -72,21 +106,11 @@ const ProductContent = () => {
           <h4>Size:</h4>
 
           <ul>
-            <li>
-              <Link href="#">XS</Link>
-            </li>
-            <li className="active">
-              <Link href="#">S</Link>
-            </li>
-            <li>
-              <Link href="#">M</Link>
-            </li>
-            <li>
-              <Link href="#">XL</Link>
-            </li>
-            <li>
-              <Link href="#">XXL</Link>
-            </li>
+            {specificProduct?.size?.map((item: string[]) => (
+              <li>
+                <Link href="#">{item}</Link>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -105,10 +129,26 @@ const ProductContent = () => {
 
         <div className="product-add-to-cart">
           <div className="input-counter">
-            <input type="number" defaultValue={1} />
+            <span className="minus-btn">
+              <i className="fas fa-minus" onClick={() => decreaseQty()}></i>
+            </span>
+            <input type="text" value={qty} />
+            <span className="plus-btn">
+              <i className="fas fa-plus" onClick={() => increaseQty()}></i>
+            </span>
           </div>
 
-          <button type="submit" className="btn btn-primary">
+          <button
+            type="submit"
+            className="btn btn-primary"
+            onClick={() => {
+              addToCartHandler(specificProduct);
+              toast.success("Product added successfully!", {
+                position: "top-right",
+                autoClose: 3000,
+              });
+            }}
+          >
             <i className="fas fa-cart-plus"></i> Add to Cart
           </button>
         </div>

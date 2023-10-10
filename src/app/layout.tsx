@@ -4,6 +4,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import LayoutProvider from "@/components/Provider";
 import Navbar from "@/components/Layout/Navbar";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const metadata: Metadata = {
   title: "Drip-Associates - React Next eCommerce Templates",
@@ -23,6 +25,7 @@ export default function RootLayout({
           {children}
           <Footer />
           <GoTop />
+          <ToastContainer position="top-right" autoClose={3000} />
         </LayoutProvider>
       </body>
     </html>

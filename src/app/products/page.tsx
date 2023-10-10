@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import Facility from "@/components/Common/Facility";
 import LeftSidebar from "@/components/Products/LeftSidebar";
@@ -7,6 +8,14 @@ import OfferArea from "@/components/ShopStyleOne/OfferArea";
 import ProductsCard from "@/components/Products/ProductsCard";
 
 const Products = () => {
+  const [filters, setFilters] = useState({
+    brand: "",
+    color: "",
+    price: "",
+    collections: "",
+    size: "",
+    tags: "",
+  });
   return (
     <>
       <Breadcrumb title="Products" />
@@ -21,13 +30,13 @@ const Products = () => {
 
           <div className="row">
             <div className="col-lg-4 col-md-12">
-              <LeftSidebar />
+              <LeftSidebar filters={filters} setFilters={setFilters} />
             </div>
 
             <div className="col-lg-8 col-md-12">
               <ProductsFilterOptions />
 
-              <ProductsCard />
+              <ProductsCard filters={filters} />
             </div>
           </div>
         </div>

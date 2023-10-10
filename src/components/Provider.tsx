@@ -13,7 +13,8 @@ import { SessionProvider } from "next-auth/react";
 import "../styles/style.css";
 // Responsive CSS
 import "../styles/responsive.css";
-import store from "@/redux/store";
+import { store, persistor } from "@/redux/store";
+import { PersistGate } from "redux-persist/integration/react";
 
 export default function LayoutProvider({
   children,
@@ -22,7 +23,11 @@ export default function LayoutProvider({
 }) {
   return (
     <SessionProvider>
-      <Provider store={store}>{children}</Provider>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          {children}
+        </PersistGate>
+      </Provider>
     </SessionProvider>
   );
 }

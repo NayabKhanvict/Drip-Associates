@@ -108,7 +108,18 @@ a:hover, a:focus {
   padding-bottom: 30px;
 }
 
-.h1:last-child, .h2:last-child, .h3:last-child, .h4:last-child, .h5:last-child, .h6:last-child, h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child {
+.h1:last-child,
+.h2:last-child,
+.h3:last-child,
+.h4:last-child,
+.h5:last-child,
+.h6:last-child,
+h1:last-child,
+h2:last-child,
+h3:last-child,
+h4:last-child,
+h5:last-child,
+h6:last-child {
   margin-bottom: 0;
 }
 
@@ -1887,7 +1898,8 @@ All Products Area CSS
 .single-product-box .product-image ul li {
   margin-bottom: 8px;
 }
-.single-product-box .product-image ul li button, .single-product-box .product-image ul li a {
+.single-product-box .product-image ul li button,
+.single-product-box .product-image ul li a {
   width: 40px;
   height: 40px;
   line-height: 38px;
@@ -1897,11 +1909,14 @@ All Products Area CSS
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
   border: none;
 }
-.single-product-box .product-image ul li button:hover, .single-product-box .product-image ul li button:focus, .single-product-box .product-image ul li a:hover, .single-product-box .product-image ul li a:focus {
+.single-product-box .product-image ul li button:hover, .single-product-box .product-image ul li button:focus,
+.single-product-box .product-image ul li a:hover,
+.single-product-box .product-image ul li a:focus {
   color: #ffffff;
   background-color: #222222;
 }
-.single-product-box .product-image ul li button.disabled, .single-product-box .product-image ul li a.disabled {
+.single-product-box .product-image ul li button.disabled,
+.single-product-box .product-image ul li a.disabled {
   cursor: not-allowed;
   background-color: #ffffff !important;
   color: #222222 !important;
@@ -3002,7 +3017,8 @@ blockquote cite::before {
   margin-bottom: 30px;
   margin-top: 30px;
 }
-.comments-area ol, .comments-area ul {
+.comments-area ol,
+.comments-area ul {
   padding: 0;
   margin: 0;
   list-style-type: none;
@@ -3114,7 +3130,19 @@ blockquote cite::before {
   font-size: 13px;
   font-weight: 600;
 }
-.comments-area .comment-respond input[type=date], .comments-area .comment-respond input[type=time], .comments-area .comment-respond input[type=datetime-local], .comments-area .comment-respond input[type=week], .comments-area .comment-respond input[type=month], .comments-area .comment-respond input[type=text], .comments-area .comment-respond input[type=email], .comments-area .comment-respond input[type=url], .comments-area .comment-respond input[type=password], .comments-area .comment-respond input[type=search], .comments-area .comment-respond input[type=tel], .comments-area .comment-respond input[type=number], .comments-area .comment-respond textarea {
+.comments-area .comment-respond input[type=date],
+.comments-area .comment-respond input[type=time],
+.comments-area .comment-respond input[type=datetime-local],
+.comments-area .comment-respond input[type=week],
+.comments-area .comment-respond input[type=month],
+.comments-area .comment-respond input[type=text],
+.comments-area .comment-respond input[type=email],
+.comments-area .comment-respond input[type=url],
+.comments-area .comment-respond input[type=password],
+.comments-area .comment-respond input[type=search],
+.comments-area .comment-respond input[type=tel],
+.comments-area .comment-respond input[type=number],
+.comments-area .comment-respond textarea {
   display: block;
   width: 100%;
   background-color: #ffffff;
@@ -3123,7 +3151,19 @@ blockquote cite::before {
   outline: 0;
   transition: 0.5s;
 }
-.comments-area .comment-respond input[type=date]:focus, .comments-area .comment-respond input[type=time]:focus, .comments-area .comment-respond input[type=datetime-local]:focus, .comments-area .comment-respond input[type=week]:focus, .comments-area .comment-respond input[type=month]:focus, .comments-area .comment-respond input[type=text]:focus, .comments-area .comment-respond input[type=email]:focus, .comments-area .comment-respond input[type=url]:focus, .comments-area .comment-respond input[type=password]:focus, .comments-area .comment-respond input[type=search]:focus, .comments-area .comment-respond input[type=tel]:focus, .comments-area .comment-respond input[type=number]:focus, .comments-area .comment-respond textarea:focus {
+.comments-area .comment-respond input[type=date]:focus,
+.comments-area .comment-respond input[type=time]:focus,
+.comments-area .comment-respond input[type=datetime-local]:focus,
+.comments-area .comment-respond input[type=week]:focus,
+.comments-area .comment-respond input[type=month]:focus,
+.comments-area .comment-respond input[type=text]:focus,
+.comments-area .comment-respond input[type=email]:focus,
+.comments-area .comment-respond input[type=url]:focus,
+.comments-area .comment-respond input[type=password]:focus,
+.comments-area .comment-respond input[type=search]:focus,
+.comments-area .comment-respond input[type=tel]:focus,
+.comments-area .comment-respond input[type=number]:focus,
+.comments-area .comment-respond textarea:focus {
   border-color: #222222;
 }
 .comments-area .comment-respond .comment-form-author {
@@ -3765,7 +3805,7 @@ Woocommerce Sidebar Area CSS
   margin-left: 10px;
   margin-top: 10px;
 }
-.woocommerce-sidebar-area .selected-filters-wrap-list ul li a {
+.woocommerce-sidebar-area .selected-filters-wrap-list ul li span {
   font-size: 12px;
   display: inline-block;
   border: 1px solid #eeeeee;
@@ -3774,14 +3814,14 @@ Woocommerce Sidebar Area CSS
   position: relative;
   text-align: center;
 }
-.woocommerce-sidebar-area .selected-filters-wrap-list ul li a:hover, .woocommerce-sidebar-area .selected-filters-wrap-list ul li a:focus {
+.woocommerce-sidebar-area .selected-filters-wrap-list ul li span:hover, .woocommerce-sidebar-area .selected-filters-wrap-list ul li span:focus {
   border-color: #222222;
   color: #222222;
 }
-.woocommerce-sidebar-area .selected-filters-wrap-list ul li a:hover::before, .woocommerce-sidebar-area .selected-filters-wrap-list ul li a:focus::before {
+.woocommerce-sidebar-area .selected-filters-wrap-list ul li span:hover::before, .woocommerce-sidebar-area .selected-filters-wrap-list ul li span:focus::before {
   color: red;
 }
-.woocommerce-sidebar-area .selected-filters-wrap-list ul li a::before {
+.woocommerce-sidebar-area .selected-filters-wrap-list ul li span::before {
   content: "x";
   position: absolute;
   right: 12px;
@@ -3789,7 +3829,7 @@ Woocommerce Sidebar Area CSS
   transition: 0.5s;
   transform: translateY(-50%);
 }
-.woocommerce-sidebar-area .selected-filters-wrap-list ul li.active a {
+.woocommerce-sidebar-area .selected-filters-wrap-list ul li.active span {
   border-color: #222222;
   color: #222222;
 }
@@ -3797,19 +3837,19 @@ Woocommerce Sidebar Area CSS
   margin-top: 12px;
   cursor: pointer;
 }
-.woocommerce-sidebar-area .selected-filters-wrap-list .delete-selected-filters a {
+.woocommerce-sidebar-area .selected-filters-wrap-list .delete-selected-filters span {
   color: #666666;
 }
-.woocommerce-sidebar-area .selected-filters-wrap-list .delete-selected-filters a i {
+.woocommerce-sidebar-area .selected-filters-wrap-list .delete-selected-filters span i {
   transition: 0.5s;
 }
-.woocommerce-sidebar-area .selected-filters-wrap-list .delete-selected-filters a span {
+.woocommerce-sidebar-area .selected-filters-wrap-list .delete-selected-filters span span {
   display: inline-block;
   font-size: 12px;
   color: #666666;
   text-decoration: underline;
 }
-.woocommerce-sidebar-area .selected-filters-wrap-list .delete-selected-filters a:hover i, .woocommerce-sidebar-area .selected-filters-wrap-list .delete-selected-filters a:focus i {
+.woocommerce-sidebar-area .selected-filters-wrap-list .delete-selected-filters span:hover i, .woocommerce-sidebar-area .selected-filters-wrap-list .delete-selected-filters span:focus i {
   color: red;
 }
 .woocommerce-sidebar-area .collections-list-row {
@@ -3821,13 +3861,14 @@ Woocommerce Sidebar Area CSS
 .woocommerce-sidebar-area .collections-list-row li {
   margin-bottom: 12px;
 }
-.woocommerce-sidebar-area .collections-list-row li a {
+.woocommerce-sidebar-area .collections-list-row li span {
   color: #858585;
+  cursor: pointer;
 }
-.woocommerce-sidebar-area .collections-list-row li a:hover, .woocommerce-sidebar-area .collections-list-row li a:focus {
+.woocommerce-sidebar-area .collections-list-row li span:hover, .woocommerce-sidebar-area .collections-list-row li span:focus {
   color: #222222;
 }
-.woocommerce-sidebar-area .collections-list-row li.active a {
+.woocommerce-sidebar-area .collections-list-row li.active span {
   color: #222222;
 }
 .woocommerce-sidebar-area .collections-list-row li:last-child {
@@ -3842,13 +3883,14 @@ Woocommerce Sidebar Area CSS
 .woocommerce-sidebar-area .brands-list-row li {
   margin-bottom: 12px;
 }
-.woocommerce-sidebar-area .brands-list-row li a {
+.woocommerce-sidebar-area .brands-list-row li span {
   color: #858585;
+  cursor: pointer;
 }
-.woocommerce-sidebar-area .brands-list-row li a:hover, .woocommerce-sidebar-area .brands-list-row li a:focus {
+.woocommerce-sidebar-area .brands-list-row li span:hover, .woocommerce-sidebar-area .brands-list-row li span:focus {
   color: #222222;
 }
-.woocommerce-sidebar-area .brands-list-row li.active a {
+.woocommerce-sidebar-area .brands-list-row li.active span {
   color: #222222;
 }
 .woocommerce-sidebar-area .brands-list-row li:last-child {
@@ -3867,7 +3909,7 @@ Woocommerce Sidebar Area CSS
   margin-left: 10px;
   margin-top: 10px;
 }
-.woocommerce-sidebar-area .size-list-row li a {
+.woocommerce-sidebar-area .size-list-row li span {
   width: 35px;
   height: 35px;
   display: inline-block;
@@ -3875,12 +3917,13 @@ Woocommerce Sidebar Area CSS
   border: 1px solid #eeeeee;
   color: #858585;
   text-align: center;
+  cursor: pointer;
 }
-.woocommerce-sidebar-area .size-list-row li a:hover, .woocommerce-sidebar-area .size-list-row li a:focus {
+.woocommerce-sidebar-area .size-list-row li span:hover, .woocommerce-sidebar-area .size-list-row li span:focus {
   border-color: #222222;
   color: #222222;
 }
-.woocommerce-sidebar-area .size-list-row li.active a {
+.woocommerce-sidebar-area .size-list-row li.active span {
   border-color: #222222;
   color: #222222;
 }
@@ -3893,13 +3936,14 @@ Woocommerce Sidebar Area CSS
 .woocommerce-sidebar-area .price-list-row li {
   margin-bottom: 10px;
 }
-.woocommerce-sidebar-area .price-list-row li a {
+.woocommerce-sidebar-area .price-list-row li span {
   color: #858585;
+  cursor: pointer;
 }
-.woocommerce-sidebar-area .price-list-row li a:hover, .woocommerce-sidebar-area .price-list-row li a:focus {
+.woocommerce-sidebar-area .price-list-row li span:hover, .woocommerce-sidebar-area .price-list-row li span:focus {
   color: #222222;
 }
-.woocommerce-sidebar-area .price-list-row li.active a {
+.woocommerce-sidebar-area .price-list-row li.active span {
   color: #222222;
 }
 .woocommerce-sidebar-area .price-list-row li:last-child {
@@ -3918,70 +3962,29 @@ Woocommerce Sidebar Area CSS
   margin-left: 4px;
   margin-top: 4px;
 }
-.woocommerce-sidebar-area .color-list-row li a {
+.woocommerce-sidebar-area .color-list-row li span {
   display: inline-block;
   position: relative;
   border: 1px solid transparent;
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
 }
-.woocommerce-sidebar-area .color-list-row li a::before {
+.woocommerce-sidebar-area .color-list-row li span::before {
   position: absolute;
   content: "";
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  background: #eeeeee;
   border-radius: 50%;
   margin: 2px;
   transition: 0.5s;
 }
-.woocommerce-sidebar-area .color-list-row li a:hover, .woocommerce-sidebar-area .color-list-row li a:focus {
+.woocommerce-sidebar-area .color-list-row li span:hover, .woocommerce-sidebar-area .color-list-row li span:focus {
   border-color: #222222;
 }
-.woocommerce-sidebar-area .color-list-row li a.color-white::before {
-  background: #ffffff;
-  border: 1px solid #eeeeee;
-}
-.woocommerce-sidebar-area .color-list-row li a.color-black::before {
-  background: #222222;
-}
-.woocommerce-sidebar-area .color-list-row li a.color-red::before {
-  background: red;
-}
-.woocommerce-sidebar-area .color-list-row li a.color-blue::before {
-  background: blue;
-}
-.woocommerce-sidebar-area .color-list-row li a.color-green::before {
-  background: green;
-}
-.woocommerce-sidebar-area .color-list-row li a.color-yellow::before {
-  background: yellow;
-}
-.woocommerce-sidebar-area .color-list-row li a.color-yellowgreen::before {
-  background: yellowgreen;
-}
-.woocommerce-sidebar-area .color-list-row li a.color-pink::before {
-  background: pink;
-}
-.woocommerce-sidebar-area .color-list-row li a.color-violet::before {
-  background: violet;
-}
-.woocommerce-sidebar-area .color-list-row li a.color-teal::before {
-  background: teal;
-}
-.woocommerce-sidebar-area .color-list-row li a.color-plum::before {
-  background: plum;
-}
-.woocommerce-sidebar-area .color-list-row li a.color-lime::before {
-  background: lime;
-}
-.woocommerce-sidebar-area .color-list-row li a.color-blueviolet::before {
-  background: blueviolet;
-}
-.woocommerce-sidebar-area .color-list-row li.active a {
+.woocommerce-sidebar-area .color-list-row li.active span {
   border-color: #222222;
 }
 .woocommerce-sidebar-area .tags-list-row {
@@ -3997,18 +4000,19 @@ Woocommerce Sidebar Area CSS
   margin-left: 10px;
   margin-top: 10px;
 }
-.woocommerce-sidebar-area .tags-list-row li a {
+.woocommerce-sidebar-area .tags-list-row li span {
   display: inline-block;
   border: 1px solid #eeeeee;
   padding: 5px 15px;
   color: #858585;
   text-align: center;
+  cursor: pointer;
 }
-.woocommerce-sidebar-area .tags-list-row li a:hover, .woocommerce-sidebar-area .tags-list-row li a:focus {
+.woocommerce-sidebar-area .tags-list-row li span:hover, .woocommerce-sidebar-area .tags-list-row li span:focus {
   border-color: #222222;
   color: #222222;
 }
-.woocommerce-sidebar-area .tags-list-row li.active a {
+.woocommerce-sidebar-area .tags-list-row li.active span {
   border-color: #222222;
   color: #222222;
 }
@@ -4116,14 +4120,20 @@ Woocommerce Sidebar Area CSS
 .woocommerce-sidebar-area .collection-filter-by-price .irs-handle {
   cursor: pointer;
 }
-.woocommerce-sidebar-area .collection-filter-by-price .irs--flat .irs-from, .woocommerce-sidebar-area .collection-filter-by-price .irs--flat .irs-to, .woocommerce-sidebar-area .collection-filter-by-price .irs--flat .irs-single {
+.woocommerce-sidebar-area .collection-filter-by-price .irs--flat .irs-from,
+.woocommerce-sidebar-area .collection-filter-by-price .irs--flat .irs-to,
+.woocommerce-sidebar-area .collection-filter-by-price .irs--flat .irs-single {
   background-color: #222222;
   padding: 1px 5px 1px 11.5px;
 }
-.woocommerce-sidebar-area .collection-filter-by-price .irs--flat .irs-from::before, .woocommerce-sidebar-area .collection-filter-by-price .irs--flat .irs-to::before, .woocommerce-sidebar-area .collection-filter-by-price .irs--flat .irs-single::before {
+.woocommerce-sidebar-area .collection-filter-by-price .irs--flat .irs-from::before,
+.woocommerce-sidebar-area .collection-filter-by-price .irs--flat .irs-to::before,
+.woocommerce-sidebar-area .collection-filter-by-price .irs--flat .irs-single::before {
   border-top-color: #222222;
 }
-.woocommerce-sidebar-area .collection-filter-by-price .irs--flat .irs-from::after, .woocommerce-sidebar-area .collection-filter-by-price .irs--flat .irs-to::after, .woocommerce-sidebar-area .collection-filter-by-price .irs--flat .irs-single::after {
+.woocommerce-sidebar-area .collection-filter-by-price .irs--flat .irs-from::after,
+.woocommerce-sidebar-area .collection-filter-by-price .irs--flat .irs-to::after,
+.woocommerce-sidebar-area .collection-filter-by-price .irs--flat .irs-single::after {
   content: "$";
   position: absolute;
   left: 5px;
@@ -4135,10 +4145,12 @@ Woocommerce Sidebar Area CSS
 .woocommerce-sidebar-area .collection-filter-by-price .irs--flat .irs-handle > i:first-child {
   background-color: #222222;
 }
-.woocommerce-sidebar-area .collection-filter-by-price .irs--flat .irs-min, .woocommerce-sidebar-area .collection-filter-by-price .irs--flat .irs-max {
+.woocommerce-sidebar-area .collection-filter-by-price .irs--flat .irs-min,
+.woocommerce-sidebar-area .collection-filter-by-price .irs--flat .irs-max {
   padding: 1px 3px 1px 9.5px;
 }
-.woocommerce-sidebar-area .collection-filter-by-price .irs--flat .irs-min::before, .woocommerce-sidebar-area .collection-filter-by-price .irs--flat .irs-max::before {
+.woocommerce-sidebar-area .collection-filter-by-price .irs--flat .irs-min::before,
+.woocommerce-sidebar-area .collection-filter-by-price .irs--flat .irs-max::before {
   content: "$";
   position: absolute;
   left: 3px;
@@ -4312,7 +4324,8 @@ Sizing Guide Area CSS
   border-bottom: none;
   color: #ffffff;
 }
-.sizing-guide-table table tr td, .sizing-guide-table table tr th {
+.sizing-guide-table table tr td,
+.sizing-guide-table table tr th {
   border-top: none;
 }
 .sizing-guide-table .sizing-guide-info {
@@ -4593,7 +4606,8 @@ Products Details Area CSS
 .products-page-gallery .product-page-gallery-main .slick-slide img {
   width: 100%;
 }
-.products-page-gallery .product-page-gallery-main .slick-prev, .products-page-gallery .product-page-gallery-main .slick-next {
+.products-page-gallery .product-page-gallery-main .slick-prev,
+.products-page-gallery .product-page-gallery-main .slick-next {
   z-index: 1;
   width: 45px;
   height: 45px;
@@ -4606,7 +4620,8 @@ Products Details Area CSS
   opacity: 0;
   visibility: hidden;
 }
-.products-page-gallery .product-page-gallery-main .slick-prev::before, .products-page-gallery .product-page-gallery-main .slick-next::before {
+.products-page-gallery .product-page-gallery-main .slick-prev::before,
+.products-page-gallery .product-page-gallery-main .slick-next::before {
   content: "" !important;
   position: relative;
   display: inline-block;
@@ -4621,11 +4636,13 @@ Products Details Area CSS
   border-radius: 1px;
   border-color: #222222;
 }
-.products-page-gallery .product-page-gallery-main .slick-prev:hover, .products-page-gallery .product-page-gallery-main .slick-next:hover {
+.products-page-gallery .product-page-gallery-main .slick-prev:hover,
+.products-page-gallery .product-page-gallery-main .slick-next:hover {
   background-color: #222222;
   color: #ffffff;
 }
-.products-page-gallery .product-page-gallery-main .slick-prev:hover::before, .products-page-gallery .product-page-gallery-main .slick-next:hover::before {
+.products-page-gallery .product-page-gallery-main .slick-prev:hover::before,
+.products-page-gallery .product-page-gallery-main .slick-next:hover::before {
   border-color: #ffffff;
 }
 .products-page-gallery .product-page-gallery-main .slick-next {
@@ -4642,7 +4659,8 @@ Products Details Area CSS
 .products-page-gallery .product-page-gallery-main .slick-prev::before {
   transform: rotate(225deg);
 }
-.products-page-gallery .product-page-gallery-main:hover .slick-prev, .products-page-gallery .product-page-gallery-main:hover .slick-next {
+.products-page-gallery .product-page-gallery-main:hover .slick-prev,
+.products-page-gallery .product-page-gallery-main:hover .slick-next {
   opacity: 1;
   visibility: visible;
 }
@@ -5092,7 +5110,8 @@ Products Details Area CSS
 .products-details-tab .react-tabs__tab-list li:focus-visible {
   outline: 0;
 }
-.products-details-tab .react-tabs__tab-list li .tabs-nav-text, .products-details-tab .react-tabs__tab-list li a {
+.products-details-tab .react-tabs__tab-list li .tabs-nav-text,
+.products-details-tab .react-tabs__tab-list li a {
   display: inline-block;
   font-size: 14px;
   position: relative;
@@ -5101,7 +5120,8 @@ Products Details Area CSS
   color: #666666;
   cursor: pointer;
 }
-.products-details-tab .react-tabs__tab-list li .tabs-nav-text .dot, .products-details-tab .react-tabs__tab-list li a .dot {
+.products-details-tab .react-tabs__tab-list li .tabs-nav-text .dot,
+.products-details-tab .react-tabs__tab-list li a .dot {
   position: absolute;
   top: 4px;
   left: 0;
@@ -5110,7 +5130,8 @@ Products Details Area CSS
   border: 1px solid #666666;
   transition: 0.5s;
 }
-.products-details-tab .react-tabs__tab-list li .tabs-nav-text .dot::before, .products-details-tab .react-tabs__tab-list li a .dot::before {
+.products-details-tab .react-tabs__tab-list li .tabs-nav-text .dot::before,
+.products-details-tab .react-tabs__tab-list li a .dot::before {
   position: absolute;
   top: 0;
   content: "";
@@ -5121,32 +5142,43 @@ Products Details Area CSS
   margin: 1px;
   transition: 0.5s;
 }
-.products-details-tab .react-tabs__tab-list li .tabs-nav-text:hover, .products-details-tab .react-tabs__tab-list li .tabs-nav-text:focus, .products-details-tab .react-tabs__tab-list li a:hover, .products-details-tab .react-tabs__tab-list li a:focus {
+.products-details-tab .react-tabs__tab-list li .tabs-nav-text:hover, .products-details-tab .react-tabs__tab-list li .tabs-nav-text:focus,
+.products-details-tab .react-tabs__tab-list li a:hover,
+.products-details-tab .react-tabs__tab-list li a:focus {
   color: #222222;
 }
-.products-details-tab .react-tabs__tab-list li .tabs-nav-text:hover .dot, .products-details-tab .react-tabs__tab-list li .tabs-nav-text:focus .dot, .products-details-tab .react-tabs__tab-list li a:hover .dot, .products-details-tab .react-tabs__tab-list li a:focus .dot {
+.products-details-tab .react-tabs__tab-list li .tabs-nav-text:hover .dot, .products-details-tab .react-tabs__tab-list li .tabs-nav-text:focus .dot,
+.products-details-tab .react-tabs__tab-list li a:hover .dot,
+.products-details-tab .react-tabs__tab-list li a:focus .dot {
   border-color: #222222;
 }
-.products-details-tab .react-tabs__tab-list li .tabs-nav-text:hover .dot::before, .products-details-tab .react-tabs__tab-list li .tabs-nav-text:focus .dot::before, .products-details-tab .react-tabs__tab-list li a:hover .dot::before, .products-details-tab .react-tabs__tab-list li a:focus .dot::before {
+.products-details-tab .react-tabs__tab-list li .tabs-nav-text:hover .dot::before, .products-details-tab .react-tabs__tab-list li .tabs-nav-text:focus .dot::before,
+.products-details-tab .react-tabs__tab-list li a:hover .dot::before,
+.products-details-tab .react-tabs__tab-list li a:focus .dot::before {
   background: #222222;
 }
-.products-details-tab .react-tabs__tab-list li.react-tabs__tab--selected .tabs-nav-text, .products-details-tab .react-tabs__tab-list li.react-tabs__tab--selected a {
+.products-details-tab .react-tabs__tab-list li.react-tabs__tab--selected .tabs-nav-text,
+.products-details-tab .react-tabs__tab-list li.react-tabs__tab--selected a {
   color: #222222;
 }
-.products-details-tab .react-tabs__tab-list li.react-tabs__tab--selected .tabs-nav-text .dot, .products-details-tab .react-tabs__tab-list li.react-tabs__tab--selected a .dot {
+.products-details-tab .react-tabs__tab-list li.react-tabs__tab--selected .tabs-nav-text .dot,
+.products-details-tab .react-tabs__tab-list li.react-tabs__tab--selected a .dot {
   border-color: #222222;
 }
-.products-details-tab .react-tabs__tab-list li.react-tabs__tab--selected .tabs-nav-text .dot::before, .products-details-tab .react-tabs__tab-list li.react-tabs__tab--selected a .dot::before {
+.products-details-tab .react-tabs__tab-list li.react-tabs__tab--selected .tabs-nav-text .dot::before,
+.products-details-tab .react-tabs__tab-list li.react-tabs__tab--selected a .dot::before {
   background: #222222;
 }
 .products-details-tab .products-details-tab-content p {
   margin-bottom: 20px;
 }
-.products-details-tab .products-details-tab-content ul li, .products-details-tab .products-details-tab-content ol li {
+.products-details-tab .products-details-tab-content ul li,
+.products-details-tab .products-details-tab-content ol li {
   margin-bottom: 10px;
   color: #666666;
 }
-.products-details-tab .products-details-tab-content ul li:last-child, .products-details-tab .products-details-tab-content ol li:last-child {
+.products-details-tab .products-details-tab-content ul li:last-child,
+.products-details-tab .products-details-tab-content ol li:last-child {
   margin-bottom: 0;
 }
 .products-details-tab .products-details-tab-content .table {
@@ -5278,7 +5310,10 @@ Products Details Area CSS
   color: transparent;
   transition: color 0.2s ease-in-out;
 }
-.products-details-tab .products-details-tab-content .product-review-form .review-form form .review-rating .star-rating label:hover ~ label .star, .products-details-tab .products-details-tab-content .product-review-form .review-form form .review-rating .star-rating svg.star:hover, .products-details-tab .products-details-tab-content .product-review-form .review-form form .review-rating .star-rating input[name=star]:focus ~ label .star, .products-details-tab .products-details-tab-content .product-review-form .review-form form .review-rating .star-rating input[name=star]:checked ~ label .star {
+.products-details-tab .products-details-tab-content .product-review-form .review-form form .review-rating .star-rating label:hover ~ label .star,
+.products-details-tab .products-details-tab-content .product-review-form .review-form form .review-rating .star-rating svg.star:hover,
+.products-details-tab .products-details-tab-content .product-review-form .review-form form .review-rating .star-rating input[name=star]:focus ~ label .star,
+.products-details-tab .products-details-tab-content .product-review-form .review-form form .review-rating .star-rating input[name=star]:checked ~ label .star {
   color: #f2b01e;
 }
 .products-details-tab .products-details-tab-content .product-review-form .review-form form .review-rating .star-rating svg {
@@ -5349,7 +5384,8 @@ Products Details Area CSS
   border-bottom: none;
   color: #ffffff;
 }
-.sizeGuideModal .modal-content .modal-sizeguide .table tr td, .sizeGuideModal .modal-content .modal-sizeguide .table tr th {
+.sizeGuideModal .modal-content .modal-sizeguide .table tr td,
+.sizeGuideModal .modal-content .modal-sizeguide .table tr th {
   border-top: none;
 }
 
@@ -6169,7 +6205,8 @@ Compare Area CSS
 .products-compare-table .remove-btn {
   margin-bottom: 15px;
 }
-.products-compare-table .remove-btn button, .products-compare-table .remove-btn a {
+.products-compare-table .remove-btn button,
+.products-compare-table .remove-btn a {
   color: red;
   display: inline-block;
   border: none;
@@ -6640,7 +6677,8 @@ Go Top CSS
 }
 
 /* Home slider */
-.home-slides-two .swiper-button-prev, .home-slides-two .swiper-button-next {
+.home-slides-two .swiper-button-prev,
+.home-slides-two .swiper-button-next {
   margin: 0;
   width: 45px;
   height: 45px;
@@ -6651,10 +6689,12 @@ Go Top CSS
   font-size: 20px;
   border-radius: 50%;
 }
-.home-slides-two .swiper-button-prev::after, .home-slides-two .swiper-button-next::after {
+.home-slides-two .swiper-button-prev::after,
+.home-slides-two .swiper-button-next::after {
   font-size: 20px;
 }
-.home-slides-two .swiper-button-prev:hover, .home-slides-two .swiper-button-next:hover {
+.home-slides-two .swiper-button-prev:hover,
+.home-slides-two .swiper-button-next:hover {
   background-color: #ffffff;
   color: #222222;
 }
@@ -7537,7 +7577,8 @@ All Products Area CSS
   display: inline-block;
   margin-left: 5px;
 }
-.single-product-item .product-content ul li a, .single-product-item .product-content ul li button {
+.single-product-item .product-content ul li a,
+.single-product-item .product-content ul li button {
   width: 35px;
   height: 35px;
   line-height: 35px;
@@ -7548,7 +7589,9 @@ All Products Area CSS
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
   border: none;
 }
-.single-product-item .product-content ul li a:hover, .single-product-item .product-content ul li a:focus, .single-product-item .product-content ul li button:hover, .single-product-item .product-content ul li button:focus {
+.single-product-item .product-content ul li a:hover, .single-product-item .product-content ul li a:focus,
+.single-product-item .product-content ul li button:hover,
+.single-product-item .product-content ul li button:focus {
   color: #ffffff;
   background-color: #222222;
 }
@@ -7616,7 +7659,8 @@ All Products Area CSS
 .products-category-tab-style-2 .react-tabs__tab-list li:focus-visible {
   outline: 0;
 }
-.products-category-tab-style-2 .react-tabs__tab-list li span, .products-category-tab-style-2 .react-tabs__tab-list li a {
+.products-category-tab-style-2 .react-tabs__tab-list li span,
+.products-category-tab-style-2 .react-tabs__tab-list li a {
   color: #858585;
   position: relative;
   display: inline-block;
@@ -7624,13 +7668,16 @@ All Products Area CSS
   font-weight: 400;
   font-size: 18px;
 }
-.products-category-tab-style-2 .react-tabs__tab-list li span:hover, .products-category-tab-style-2 .react-tabs__tab-list li a:hover {
+.products-category-tab-style-2 .react-tabs__tab-list li span:hover,
+.products-category-tab-style-2 .react-tabs__tab-list li a:hover {
   color: #222222;
 }
-.products-category-tab-style-2 .react-tabs__tab-list li span:hover::before, .products-category-tab-style-2 .react-tabs__tab-list li a:hover::before {
+.products-category-tab-style-2 .react-tabs__tab-list li span:hover::before,
+.products-category-tab-style-2 .react-tabs__tab-list li a:hover::before {
   width: 100%;
 }
-.products-category-tab-style-2 .react-tabs__tab-list li span::before, .products-category-tab-style-2 .react-tabs__tab-list li a::before {
+.products-category-tab-style-2 .react-tabs__tab-list li span::before,
+.products-category-tab-style-2 .react-tabs__tab-list li a::before {
   height: 3px;
   width: 0;
   background-color: #222222;
@@ -7640,10 +7687,12 @@ All Products Area CSS
   bottom: -7px;
   transition: 0.5s;
 }
-.products-category-tab-style-2 .react-tabs__tab-list li.react-tabs__tab--selected span, .products-category-tab-style-2 .react-tabs__tab-list li.react-tabs__tab--selected a {
+.products-category-tab-style-2 .react-tabs__tab-list li.react-tabs__tab--selected span,
+.products-category-tab-style-2 .react-tabs__tab-list li.react-tabs__tab--selected a {
   color: #222222;
 }
-.products-category-tab-style-2 .react-tabs__tab-list li.react-tabs__tab--selected span::before, .products-category-tab-style-2 .react-tabs__tab-list li.react-tabs__tab--selected a::before {
+.products-category-tab-style-2 .react-tabs__tab-list li.react-tabs__tab--selected span::before,
+.products-category-tab-style-2 .react-tabs__tab-list li.react-tabs__tab--selected a::before {
   width: 100%;
 }
 .products-category-tab-style-2 .react-tabs__tab-list li:last-child {
@@ -7882,6 +7931,45 @@ News Area CSS
 }
 
 /*================================================
+Success page CSS
+=================================================*/
+.succes-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  min-height: 50vh;
+  gap: 2rem;
+}
+.succes-container .success-content {
+  max-width: 70%;
+}
+.succes-container .success-content .h1 {
+  font-size: 25px;
+}
+.succes-container .success-btn {
+  display: flex;
+  gap: 2rem;
+}
+
+.order-address {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.order-address .order-box {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.order-address .order-box .h6 {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/*================================================
 Pagination CSS
 =================================================*/
 .woocommerce-pagination {
@@ -7921,9 +8009,11 @@ Pagination CSS
 }
 
 /* End home Six, Seven, Eight, Nine, Ten & Eleven Style */
-.product-img-slider .swiper-button-prev, .product-img-slider .swiper-button-next {
+.product-img-slider .swiper-button-prev,
+.product-img-slider .swiper-button-next {
   color: #000;
 }
-.product-img-slider .swiper-button-prev:after, .product-img-slider .swiper-button-next:after {
+.product-img-slider .swiper-button-prev:after,
+.product-img-slider .swiper-button-next:after {
   font-size: 30px;
 }/*# sourceMappingURL=style.css.map */

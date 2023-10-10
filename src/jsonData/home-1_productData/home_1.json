@@ -14,7 +14,7 @@
         "oldprice": 220,
         "category": "shoes",
         "type": "Flats",
-        "rating": 4.5,
+        "rating": 3.5,
         "stock": 90,
         "gender": "man",
         "size": ["S", "M", "L", "XL"]
@@ -443,14 +443,14 @@
     "bestSellers_product": [
       {
         "id": 26,
-        "title": "Long sleeve Jacket",
+        "title": "The Importance of Regular Exercise",
         "description": "Add a touch of casual style to your wardrobe with these canvas flats. They are lightweight and comfortable for all-day wear. Available in various colors and sizes.",
         "colors": ["#336600", "#993300"],
         "imghover": "/images/img-hover1.jpg",
-        "img": "images/img1.jpg",
+        "img": "images/img2.jpg",
         "images": ["/images/img1.jpg", "/images/img2.jpg", "/images/img3.jpg"],
         "company": "CasualChic",
-        "price": 200,
+        "price": 300,
         "oldprice": 220,
         "category": "shoes",
         "type": "Flats",

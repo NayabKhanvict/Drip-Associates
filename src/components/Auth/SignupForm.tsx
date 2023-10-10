@@ -24,7 +24,6 @@ const SignupForm = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { fname, lname, email, password } = formData;
-
     if (!fname || !lname || !email || !password) {
       setError("All fields are necessary");
       return;
@@ -58,13 +57,13 @@ const SignupForm = () => {
         }),
       });
       if (res.ok) {
+        // e.currentTarget.reset();
         router.push("/login");
       } else {
-        e.currentTarget.reset();
         setError("User registration failed.");
       }
     } catch (error) {
-      e.currentTarget.reset();
+      // e.currentTarget.reset();
       setError(`Error during registration: ${error}`);
     }
   };

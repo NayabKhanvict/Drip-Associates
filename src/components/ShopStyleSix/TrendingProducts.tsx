@@ -14,7 +14,13 @@ const TrendingProducts = ({ data }: any) => {
           </div>
 
           <div className="row">
-            <ProductCard data={trendingproducts} />
+            {trendingproducts.map((product: any) => (
+              <>
+                <div key={product.id} className="col-lg-4 col-md-6 col-sm-6">
+                  <ProductCard product={product} />
+                </div>
+              </>
+            ))}
           </div>
         </div>
       </div>

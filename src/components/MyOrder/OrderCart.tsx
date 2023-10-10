@@ -3,24 +3,17 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useAppDispatch, useAppSelector } from "@/typedhooks/hooks";
 import FormattedPrice from "../FormattedPrice/FormattedPrice";
-import {
-  deleteProduct,
-  resetCart,
-  getCartTotal,
-  toggleCartQty,
-} from "@/redux/slices/cartSlice";
+import { getCartTotal } from "@/redux/slices/cartSlice";
 import { toast } from "react-toastify";
+import { orderInformation, reSetOrderCart } from "@/redux/slices/orderSlice";
 
-const CartContent = () => {
+const OrderContent = () => {
   const dispatch = useAppDispatch();
-  const {
-    cartData: products,
-    totalItems,
-    totalAmount,
-  } = useAppSelector((state) => state?.cart);
-  useEffect(() => {
-    dispatch(getCartTotal());
-  }, [useAppSelector((state) => state?.cart)]);
+  const products = useAppSelector((state) => state?.order?.orderData);
+  const orderInformation = useAppSelector(
+    (state) => state?.order?.orderAddressInformation
+  );
+  console.log(products, orderInformation);
 
   if (products?.length > 0) {
     return (
@@ -71,36 +64,9 @@ const CartContent = () => {
                                 <FormattedPrice amount={product?.price} />
                               </span>
                             </td>
-
                             <td className="product-quantity">
                               <div className="input-counter">
-                                <span className="minus-btn">
-                                  <i
-                                    className="fas fa-minus"
-                                    onClick={() => {
-                                      dispatch(
-                                        toggleCartQty({
-                                          id: product?.id,
-                                          type: "DEC",
-                                        })
-                                      );
-                                    }}
-                                  ></i>
-                                </span>
                                 <input type="text" value={product?.quantity} />
-                                <span className="plus-btn">
-                                  <i
-                                    className="fas fa-plus"
-                                    onClick={() => {
-                                      dispatch(
-                                        toggleCartQty({
-                                          id: product?.id,
-                                          type: "INC",
-                                        })
-                                      );
-                                    }}
-                                  ></i>
-                                </span>
                               </div>
                             </td>
 
@@ -114,23 +80,6 @@ const CartContent = () => {
                                   }
                                 />
                               </span>
-
-                              <Link
-                                href="#"
-                                className="remove"
-                                onClick={() => {
-                                  dispatch(deleteProduct(product.id));
-                                  toast.success(
-                                    "Product delete successfully!",
-                                    {
-                                      position: "top-right",
-                                      autoClose: 3000,
-                                    }
-                                  );
-                                }}
-                              >
-                                <i className="far fa-trash-alt"></i>
-                              </Link>
                             </td>
                           </tr>
                         ))}
@@ -153,25 +102,25 @@ const CartContent = () => {
                           href="#"
                           className="btn btn-primary"
                           onClick={() => {
-                            dispatch(resetCart());
+                            dispatch(reSetOrderCart());
                             toast.success("All Product delete successfully!", {
                               position: "top-right",
                               autoClose: 3000,
                             });
                           }}
                         >
-                          REST Cart
+                          REST Order
                         </Link>
                       </div>
                     </div>
                   </div>
 
-                  <div className="cart-totals">
+                  {/* <div className="cart-totals">
                     <h3>Cart Totals</h3>
 
                     <ul>
                       <li>
-                        Subtotal{" "}
+                        Subtotal
                         <span>
                           <FormattedPrice amount={totalAmount} />
                         </span>
@@ -180,7 +129,7 @@ const CartContent = () => {
                         Totalitem <span>{totalItems}</span>
                       </li>
                       <li>
-                        Shipping{" "}
+                        Shipping
                         <span>
                           <FormattedPrice amount={20} />
                         </span>
@@ -197,8 +146,38 @@ const CartContent = () => {
                     <Link href="/checkout" className="btn btn-light">
                       Proceed to Checkout
                     </Link>
-                  </div>
+                  </div> */}
                 </form>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-lg-12 col-md-12">
+                <h4>Address</h4>
+
+                <div className="order-address">
+                  <div className="order-box">
+                    <h6 className="h6">Name:</h6>
+                    <span>{`${orderInformation?.firstName} ${orderInformation?.lastName}`}</span>
+                  </div>
+                  <div className="order-box">
+                    <h6 className="h6">Email:</h6>
+                    <span>{`${orderInformation?.email}`}</span>
+                  </div>
+                  <div className="order-box">
+                    <h6 className="h6">Number:</h6>
+                    <span>{`${orderInformation?.phone}`}</span>
+                  </div>
+                  <div className="order-box">
+                    <h6 className="h6">Address:</h6>
+                    <span>{`${orderInformation?.postcode}, ${orderInformation?.address} ${orderInformation?.city},${orderInformation?.state}`}</span>
+                  </div>
+                  {orderInformation?.notes && (
+                    <div className="order-box">
+                      <h6 className="h6">Message:</h6>
+                      <span>{`${orderInformation?.notes}`}</span>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
@@ -218,7 +197,7 @@ const CartContent = () => {
         }}
       >
         <h1 style={{ fontSize: "30px", fontWeight: "600" }}>
-          NO Product Is Present Yet!
+          Order Cart is Empty!
         </h1>
         <Link href="/" className="btn btn-light">
           Continue Shopping
@@ -228,4 +207,4 @@ const CartContent = () => {
   }
 };
 
-export default CartContent;
+export default OrderContent;
